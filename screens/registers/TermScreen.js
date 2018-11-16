@@ -18,50 +18,92 @@ class TermScreen extends Component {
 
     render() {
         return (
+
             <View style={styles.container}>
-                <Image
-                    source={require('../../assets/images/test_logo.png')}
-                    style={{width: 200, height: 200}}
+            <Image
+                source={require('../../assets/images/test_logo.png')}
+                style={{width: 200, height: 200}}
+            />
+
+            <Text style={styles.acceptText}>
+                {'\n'}ต้องการเข้าถึงข้อมูล{'\n'}เพศและอายุของท่าน{'\n'}{'\n'}
+            </Text>
+
+            <View style={styles.termButton}>
+                <Button
+                    large
+                    onPress = { () => this.props.navigation.navigate('UserScreen')}
+                    title = "อนุญาต"
+                    titleStyle={{ fontSize: "50" }}
+                    color = '#455A64'
+                    fontWeight = 'bold'
+                    buttonStyle = {{
+                        backgroundColor: '#90CAF9',
+                        width: 120,
+                        borderRadius: 30,
+                    }}
                 />
-
-                <Text style={styles.acceptText}>
-                    {'\n'}ต้องการเข้าถึงข้อมูล{'\n'}เพศและอายุของท่าน{'\n'}{'\n'}
-                </Text>
-
-                <View style={styles.termButton}>
-                    <Button
-                        large
-                        onPress = {() => {
-                            this.props.navigation.dispatch(StackActions.reset({
-                                index: 0,
-                                key: null,
-                                actions: [NavigationActions.navigate({ routeName: 'UserScreen' })],
-                                navigationOptions: {
-                                    header : null,
-                                }
-                            }))
-                        }}
-                        title = "อนุญาต"
-                        color = '#455A64'
-                        fontWeight = 'bold'
-                        buttonStyle = {{
-                            backgroundColor: '#90CAF9',
-                            borderRadius: 30,
-                        }}
-                    />
-                    <Button
-                        large
-                        onPress = {this.closeApp}
-                        title = "ไม่อนุญาต"
-                        color = '#455A64'
-                        fontWeight = 'bold'
-                        buttonStyle = {{
-                            backgroundColor: '#FFD54F',
-                            borderRadius: 30,
-                        }}
-                    />
-                </View>
+                <Button
+                    large
+                    onPress = {this.closeApp}
+                    title = "ไม่อนุญาต"
+                    titleStyle={{ fontSize: "50" }}
+                    color = '#455A64'
+                    fontWeight = 'bold'
+                    buttonStyle = {{
+                        backgroundColor: '#FFD54F',
+                        width: 120,
+                        borderRadius: 30,
+                    }}
+                />
             </View>
+
+        </View>
+
+            // <View style={styles.container}>
+            //     <Image
+            //         source={require('../../assets/images/test_logo.png')}
+            //         style={{width: 200, height: 200}}
+            //     />
+
+            //     <Text style={styles.acceptText}>
+            //         {'\n'}ต้องการเข้าถึงข้อมูล{'\n'}เพศและอายุของท่าน{'\n'}{'\n'}
+            //     </Text>
+
+            //     <View style={styles.termButton}>
+            //         <Button
+            //             large
+            //             onPress = {() => {
+            //                 this.props.navigation.dispatch(StackActions.reset({
+            //                     index: 0,
+            //                     key: null,
+            //                     actions: [NavigationActions.navigate({ routeName: 'UserScreen' })],
+            //                     navigationOptions: {
+            //                         header : null,
+            //                     }
+            //                 }))
+            //             }}
+            //             title = "อนุญาต"
+            //             color = '#455A64'
+            //             fontWeight = 'bold'
+            //             buttonStyle = {{
+            //                 backgroundColor: '#90CAF9',
+            //                 borderRadius: 30,
+            //             }}
+            //         />
+            //         <Button
+            //             large
+            //             onPress = {this.closeApp}
+            //             title = "ไม่อนุญาต"
+            //             color = '#455A64'
+            //             fontWeight = 'bold'
+            //             buttonStyle = {{
+            //                 backgroundColor: '#FFD54F',
+            //                 borderRadius: 30,
+            //             }}
+            //         />
+            //     </View>
+            // </View>
         );
     }
     closeApp () {
@@ -95,13 +137,9 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     termButton: {
-        flex: 1,
-        width: '50%',
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        justifyContent: 'center',
     }
 });
-
 export default createStackNavigator({ TermScreen, UserScreen },{ headerMode : null });

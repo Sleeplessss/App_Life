@@ -10,10 +10,10 @@ import {
   } from 'react-native';
 import { Button } from 'react-native-elements';
 import RadioGroup from 'react-native-radio-buttons-group';
-// import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 import Main from './Main';
 
-class FormScreen extends Component {
+class SelfFormScreen extends Component {
   static navigationOptions = ({
     header : null,
 });
@@ -25,7 +25,7 @@ constructor(props) {
 handle_radio = data => this.setState({'sex' : data})
 
 btnSave () {
-    alert('sex = ' + sex)
+    console.log('sex = ' + sex)
 }
 state = {
     age: '',
@@ -103,5 +103,5 @@ SelfText: {
     fontWeight: 'bold',
 },
 });
-export default FormScreen;
-// export default createStackNavigator({ FormScreen,Main },{ headerMode : null });
+// export default FormScreen;
+export default createStackNavigator({ SelfFormScreen,Main },{ headerMode : null });

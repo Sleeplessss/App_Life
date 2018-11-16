@@ -7,10 +7,10 @@ import {
 } from 'react-native';
 import { Button } from 'react-native-elements';
 import { createStackNavigator } from 'react-navigation';
-import SelfFormScreen from './Self/SelfFormScreen';
-import OverseerFormScreen from './Overseer/OverseerFormScreen';
+import SelfFormScreen from '../self_screens/SelfFormScreen';
+import IntimateFormScreen from '../intimate_screens/IntimateFormScreen';
 
-export default class UserScreen extends Component {
+class UserScreen extends Component {
 
     static navigationOptions = ({
         header : null,
@@ -24,7 +24,7 @@ export default class UserScreen extends Component {
                     {'\n'}{'\n'}
                 </Text>
                 
-                <View style={{flex:1,width:'60%'}}>
+                <View>
                     <Button
                         large
                         onPress = {() => this.props.navigation.navigate('SelfFormScreen')}
@@ -34,19 +34,23 @@ export default class UserScreen extends Component {
                         buttonStyle = {
                             {
                                 backgroundColor: '#FFECB3',
+                                width: 130,
+                                borderRadius: 30,
                             }
                         }
                     />
                     <Text>{'\n'}</Text>
                     <Button
                         large
-                        onPress = {() => this.props.navigation.navigate('OverseerFormScreen')}
+                        onPress = {() => this.props.navigation.navigate('IntimateFormScreen')}
                         title = 'ผู้ใกล้ชิด'
                         color = '#455A64'
                         fontWeight = 'bold'
                         buttonStyle = {
                             {
                                 backgroundColor: '#FFD54F',
+                                width: 130,
+                                borderRadius: 30,
                             }
                         }
                     />
@@ -72,11 +76,11 @@ const styles = StyleSheet.create({
         // justifyContent: 'center',
     },
     UserText: {
-        marginTop: 80,
+        marginTop: 50,
         color: '#455A64',
         textAlign: 'center',
         fontSize: 25,
         fontWeight: 'bold',
     },
 });
-//export default createStackNavigator({ UserScreen, SelfFormScreen, OverseerFormScreen },{ headerMode : null });
+export default createStackNavigator({ UserScreen, SelfFormScreen, IntimateFormScreen },{ headerMode : null });

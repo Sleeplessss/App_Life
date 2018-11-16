@@ -16,8 +16,11 @@ export default class OverseerFormScreen extends Component {
         header : null,
     });
     
-    handle_radio () {
-        
+    handle_sex = data_sex => this.setState({'sex' : data_sex})
+    handle_relation = data_relation => this.setState({'relation' : data_relation})
+
+    btnSave () {
+        console.log('sex = ' + sex + '  and relation = ' + relation)
     }
 
     state = {
@@ -51,9 +54,9 @@ export default class OverseerFormScreen extends Component {
      }
     render () {
         let selectedButton_sex = this.state.data_sex.find(e => e.selected == true);
-        selectedButton_sex = selectedButton_sex ? selectedButton_sex.value : this.state.data_sex[0].label;
-        let selectedButton_relation = this.state.data_sex.find(e => e.selected == true);
-        selectedButton_relation = selectedButton_relation ? selectedButton_relation.value : this.state.data_relation[0].label;
+        sex = selectedButton_sex ? selectedButton_sex.value : this.state.data_sex[0].label;
+        let selectedButton_relation = this.state.data_relation.find(e => e.selected == true);
+        relation = selectedButton_relation ? selectedButton_relation.value : this.state.data_relation[0].label;
         return (
             <View style = {styles.container}>
 
@@ -66,18 +69,22 @@ export default class OverseerFormScreen extends Component {
                 <View style={{flex:1,width:'65%'}}>
                     <TextInput
                         style={{height: 60, borderColor: 'gray', borderWidth: 2}}
-                        placeholder = "  กรอกอายุ"
+                        placeholder = "กรอกอายุ"
+                        keyboardType='numeric'
+                        maxLength = {3}
+                        fontWeight = 'bold'
+                        textAlign = 'center'
                         onChangeText={(text) => this.setState({Age:text})}
                         value={this.state.text}
                     />
                     <Text>{'\n'}{'\n'}</Text>
-                    <RadioGroup radioButtons={this.state.data_sex} onPress={() => this.setState({ sex: this.state.data_sex })} flexDirection='row' />
+                    <RadioGroup radioButtons={this.state.data_sex} onPress={this.handle_sex} flexDirection='row' />
                     <Text>{'\n'}{'\n'}</Text>
-                    <RadioGroup radioButtons={this.state.data_relation} onPress={() => this.setState({ relation: this.state.data_relation })} flexDirection='row' />
+                    <RadioGroup radioButtons={this.state.data_relation} onPress={this.handle_relation} flexDirection='row' />
                     <Text>{'\n'}{'\n'}</Text>
                     <Button
                         large
-                        onPress={()=>Alert.alert('finished')}
+                        onPress={this.btnSave}
                         title = 'ตกลง'
                         color= '#000'
                         buttonStyle = {
