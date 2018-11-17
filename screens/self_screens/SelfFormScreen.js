@@ -31,7 +31,17 @@ class SelfFormScreen extends Component {
     handle_radio = data => this.setState({ 'sex': data })
 
     handleSubmit() {
-        alert('AGE : ' + this.state.age + ' SEX : '+ sex);
+        if(!(this.state.age.startsWith('0')))
+        {
+            firebase.database().ref().child('user').push().set({
+                age : this.state.age,
+                sex : sex
+            })
+        }
+        else
+        {
+            ToastAndroid.show('กรุณากรอกอายุให้ถูกต้อง!',ToastAndroid.SHORT);
+        }
     }
 
     render() {
