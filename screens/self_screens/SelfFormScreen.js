@@ -1,17 +1,22 @@
 import React, { Component } from 'react';
-// import { View, Text } from 'react-native';
+import firebase from 'firebase';
 import {
     View,
     StyleSheet,
     Alert,
     TextInput,
     Text,
-    AsyncStorage
+    AsyncStorage,
+    ToastAndroid
 } from 'react-native';
+import {
+    createDrawerNavigator,
+    createStackNavigator,
+    StackActions,
+    NavigationActions,
+  } from 'react-navigation';
 import { Button } from 'react-native-elements';
 import RadioGroup from 'react-native-radio-buttons-group';
-import { createStackNavigator } from 'react-navigation';
-
 
 class SelfFormScreen extends Component {
 
@@ -28,10 +33,34 @@ class SelfFormScreen extends Component {
         ],
     }
 
-    handle_radio = data => this.setState({ 'sex': data })
+    handle_radio = data => this.setState({ 'sex' : data })
 
     handleSubmit() {
-        alert('AGE : ' + this.state.age + ' SEX : '+ sex);
+        if(!(this.state.age.startsWith('0')))
+        {
+            try
+            {
+                firebase.database().ref().child('user').push().set({
+                    age : this.state.age,
+                    sex : sex
+                })
+    
+                const resetActions=StackActions.reset({
+                    index:0,
+                    actions:[NavigationActions.navigate({routeName:"SelfMain"})]
+                })
+    
+                this.props.navigation.dispatch(resetActions)
+            }
+            catch
+            {
+                ToastAndroid.show('ไม่สามารถเพิ่มข้อมูลได้! กรุณาลองใหม่อีกครั้ง',ToastAndroid.SHORT);
+            } 
+        }
+        else
+        {
+            ToastAndroid.show('กรุณากรอกอายุให้ถูกต้อง!',ToastAndroid.SHORT);
+        }
     }
 
     render() {
@@ -52,17 +81,17 @@ class SelfFormScreen extends Component {
                         style={{ height: 60, borderColor: 'gray', borderWidth: 2 }}
                         placeholder="กรอกอายุ"
                         keyboardType='numeric'
-                        maxLength={3}
+                        maxLength={2}
                         fontWeight='bold'
                         textAlign='center'
                         value={this.state.age}
-                        onChangeText={ age => this.setState({ age }) }
+                        onChangeText={age => this.setState({ age })}
                     />
                     <Text>{'\n'}{'\n'}</Text>
-                    <RadioGroup 
-                        radioButtons={this.state.data} 
-                        onPress={this.handle_radio} 
-                        flexDirection='row' 
+                    <RadioGroup
+                        radioButtons={this.state.data}
+                        onPress={this.handle_radio}
+                        flexDirection='row'
                     />
                     <Text>{'\n'}{'\n'}</Text>
                     <Button

@@ -6,8 +6,6 @@ import {
   View,
 } from 'react-native';
 import { Button } from 'react-native-elements';
-import { createStackNavigator } from 'react-navigation';
-
 
 class UserScreen extends Component {
 
