@@ -1,10 +1,24 @@
 import React from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { AppLoading, Asset, Font, Icon } from 'expo';
+import * as firebase from 'firebase';
 import AppNavigator from './navigation/AppNavigator';
 import TermScreen from './screens/registers/TermScreen';
 
 export default class App extends React.Component {
+
+  componentWillMount() {
+    const firebaseConfig = {
+      apiKey: "AIzaSyAhufDFSMWzwc2yUcRPqn6o81wxRTHLRf4",
+      authDomain: "life-1d6fe.firebaseapp.com",
+      databaseURL: "https://life-1d6fe.firebaseio.com",
+      projectId: "life-1d6fe",
+      storageBucket: "life-1d6fe.appspot.com",
+      messagingSenderId: "197659518092"
+    }
+    firebase.initializeApp(firebaseConfig);
+  }
+
   state = {
     isLoadingComplete: false,
   };
@@ -22,7 +36,6 @@ export default class App extends React.Component {
       return (
         <View style={styles.container}>
           {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-          {/* <AppNavigator /> */}
           {/* <AppNavigator /> */}
           <TermScreen/>
         </View>

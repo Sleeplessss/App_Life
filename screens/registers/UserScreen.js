@@ -7,14 +7,9 @@ import {
 } from 'react-native';
 import { Button } from 'react-native-elements';
 import { createStackNavigator } from 'react-navigation';
-import SelfFormScreen from '../self_screens/SelfFormScreen';
-import IntimateFormScreen from '../intimate_screens/IntimateFormScreen';
+
 
 class UserScreen extends Component {
-
-    static navigationOptions = ({
-        header : null,
-    });
 
     render() {
         return (
@@ -83,4 +78,4 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
 });
-export default createStackNavigator({ UserScreen, SelfFormScreen, IntimateFormScreen },{ headerMode : null });
+export default UserScreen;

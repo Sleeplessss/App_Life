@@ -10,11 +10,7 @@ import { Button } from 'react-native-elements';
 import { createStackNavigator } from 'react-navigation';
 import RadioGroup from 'react-native-radio-buttons-group';
 
-export default class OverseerFormScreen extends Component {
-
-    static navigationOptions = ({
-        header : null,
-    });
+export default class IntimateFormScreen extends Component {
     
     handle_sex = data_sex => this.setState({'sex' : data_sex})
     handle_relation = data_relation => this.setState({'relation' : data_relation})
