@@ -41,6 +41,7 @@ class SelfFormScreen extends Component {
             try
             {
                 firebase.database().ref().child('user').push().set({
+                    type : 'ตนเอง',
                     age : this.state.age,
                     sex : sex
                 })
