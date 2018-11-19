@@ -11,6 +11,7 @@ import {
 import { Button } from 'react-native-elements';
 import RadioGroup from 'react-native-radio-buttons-group';
 import { createStackNavigator } from 'react-navigation';
+import Main from './Main';
 
 
 class SelfFormScreen extends Component {
@@ -67,7 +68,7 @@ class SelfFormScreen extends Component {
                     <Text>{'\n'}{'\n'}</Text>
                     <Button
                         large
-                        onPress={this.handleSubmit}
+                        onPress={()=> this.props.navigation.navigate('Main')}
                         title='ตกลง'
                         color='#000'
                         buttonStyle={{ backgroundColor: '#A5D6A7', borderRadius: 30 }}
