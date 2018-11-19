@@ -13,7 +13,7 @@ import UserScreen from './UserScreen';
 import SelfFormScreen from '../self_screens/SelfFormScreen';
 import IntimateFormScreen from '../intimate_screens/IntimateFormScreen';
 import SelfMain from '../self_screens/Main';
-// import IntimateMain from '../intimate_screens/Main';
+import IntimateMain from '../intimate_screens/Main';
 
 class TermScreen extends Component {
 
@@ -62,57 +62,10 @@ class TermScreen extends Component {
                     }}
                 />
             </View>
-
         </View>
-
-            // <View style={styles.container}>
-            //     <Image
-            //         source={require('../../assets/images/test_logo.png')}
-            //         style={{width: 200, height: 200}}
-            //     />
-
-            //     <Text style={styles.acceptText}>
-            //         {'\n'}ต้องการเข้าถึงข้อมูล{'\n'}เพศและอายุของท่าน{'\n'}{'\n'}
-            //     </Text>
-
-            //     <View style={styles.termButton}>
-            //         <Button
-            //             large
-            //             onPress = {() => {
-            //                 this.props.navigation.dispatch(StackActions.reset({
-            //                     index: 0,
-            //                     key: null,
-            //                     actions: [NavigationActions.navigate({ routeName: 'UserScreen' })],
-            //                     navigationOptions: {
-            //                         header : null,
-            //                     }
-            //                 }))
-            //             }}
-            //             title = "อนุญาต"
-            //             color = '#455A64'
-            //             fontWeight = 'bold'
-            //             buttonStyle = {{
-            //                 backgroundColor: '#90CAF9',
-            //                 borderRadius: 30,
-            //             }}
-            //         />
-            //         <Button
-            //             large
-            //             onPress = {this.closeApp}
-            //             title = "ไม่อนุญาต"
-            //             color = '#455A64'
-            //             fontWeight = 'bold'
-            //             buttonStyle = {{
-            //                 backgroundColor: '#FFD54F',
-            //                 borderRadius: 30,
-            //             }}
-            //         />
-            //     </View>
-            // </View>
         );
     }
     closeApp () {
-        // BackAndroid.exitApp();
         console.log('Exit!');
     }
 }
@@ -147,4 +100,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     }
 });
-export default createStackNavigator({ TermScreen, UserScreen, SelfFormScreen, IntimateFormScreen, SelfMain},{ headerMode : null });
+export default createStackNavigator({ 
+    TermScreen, 
+    UserScreen, 
+    SelfFormScreen, 
+    IntimateFormScreen, 
+    SelfMain,
+    IntimateMain
+},{ headerMode : null });
