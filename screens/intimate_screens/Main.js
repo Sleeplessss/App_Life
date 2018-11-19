@@ -4,17 +4,22 @@ import { View,
   StyleSheet,
   Text,
  } from 'react-native';
- import { Avatar } from 'react-native-elements';
+import { Avatar } from 'react-native-elements';
 import { createStackNavigator } from 'react-navigation';
 
 class Main extends Component {
   constructor(props) {
     super(props);
   }
+
+  static navigationOptions = ({
+    header : null,
+});
+
   render() {
     return (
-      <View style={styles.container}>
-
+        <View>
+          <Text>asdasdasdasd</Text>
       </View>
     );
   }
