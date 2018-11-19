@@ -5,10 +5,13 @@ import { View,
   Text,
  } from 'react-native';
  import { Avatar } from 'react-native-elements';
- 
 import { createStackNavigator } from 'react-navigation';
+
+// Screens
 import ArticleHome from '../self_screens/articles/ArticleHomeScreen';
 import ArticleDetail from '../self_screens/articles/ArticleDetail';
+import EnergizeScreen from '../self_screens/energize/EnergizeScreen';
+
 
 class Main extends Component {
   constructor(props) {
@@ -38,7 +41,7 @@ class Main extends Component {
             large
             rounded
             icon={{name: 'heart', type: 'font-awesome', color: 'red'}}
-            onPress={() => console.log("Works!")}
+            onPress={() => this.props.navigation.navigate('EnergizeScreen')}
             activeOpacity={0.7}
             containerStyle={{ marginLeft: 95}}
           />
@@ -147,4 +150,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default createStackNavigator({ Main, ArticleHome, ArticleDetail },{ headerMode : null });
+export default createStackNavigator({ Main, ArticleHome, ArticleDetail, EnergizeScreen },{ headerMode : null });
