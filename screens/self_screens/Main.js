@@ -11,16 +11,16 @@ import { createStackNavigator } from 'react-navigation';
 import ArticleHome from '../self_screens/articles/ArticleHomeScreen';
 import ArticleDetail from '../self_screens/articles/ArticleDetail';
 import EnergizeScreen from '../self_screens/energize/EnergizeScreen';
-
+import PhoneBook from '../self_screens/people/PhoneBook';
 
 class Main extends Component {
   constructor(props) {
     super(props);
     // this.handleArticle = this.handleArticle.bind(this);
   }
-  static navigationOptions = ({
-    header : null,
-});
+//   static navigationOptions = ({
+//     header : null,
+// });
   render() {
     return (
       <View style={styles.container}>
@@ -50,12 +50,12 @@ class Main extends Component {
 
         <View style={styles.TextMenu1}>
           <Text 
-            onPress={() => console.log("Works!")} 
+            onPress={() => this.props.navigation.navigate('ArticleHome')} 
             style={{color: '#455A64',fontSize: 25,fontWeight: 'bold',marginLeft: 20}}>
             ไขคำถาม...{'\n'}ไขข้อข้องใจ
           </Text>
           <Text 
-            onPress={() => console.log("Works!")} 
+            onPress={() => this.props.navigation.navigate('EnergizeScreen')} 
             style={{color: '#455A64',fontSize: 25,fontWeight: 'bold',marginLeft: 60}}>
             เติมพลังใจ...{'\n'}   กันเถอะ
           </Text>
@@ -67,7 +67,7 @@ class Main extends Component {
             large
             rounded
             icon={{name: 'user', type: 'font-awesome', color: 'black'}}
-            onPress={() => console.log("Works!")}
+            onPress={() => this.props.navigation.navigate('PhoneBook')}
             activeOpacity={0.7}
             containerStyle={{ marginLeft: 5, marginTop: 60}}
           />
@@ -84,7 +84,7 @@ class Main extends Component {
 
         <View style={styles.TextMenu2}>
           <Text 
-            onPress={() => console.log("Works!")} 
+            onPress={() => this.props.navigation.navigate('PhoneBook')} 
             style={{color: '#455A64',fontSize: 25,fontWeight: 'bold',marginLeft: 30}}>
               ใครสักคน...{'\n'} ที่อยากคุย
           </Text>
@@ -150,4 +150,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default createStackNavigator({ Main, ArticleHome, ArticleDetail, EnergizeScreen },{ headerMode : null });
+export default createStackNavigator({ Main, ArticleHome, ArticleDetail, EnergizeScreen, PhoneBook },{ headerMode : null });
