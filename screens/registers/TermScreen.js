@@ -12,9 +12,7 @@ import { createStackNavigator, StackActions, NavigationActions } from 'react-nav
 import UserScreen from './UserScreen';
 import SelfFormScreen from '../self_screens/SelfFormScreen';
 import IntimateFormScreen from '../intimate_screens/IntimateFormScreen';
-import Main from '../self_screens/Main';
-// import SelfMain from '../self_screens/Main';
-// import IntimateMain from '../intimate_screens/Main';
+import SelfMain from '../self_screens/Main';
 
 class TermScreen extends Component {
 
@@ -148,5 +146,4 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     }
 });
-// export default createStackNavigator({ TermScreen, UserScreen, SelfFormScreen, IntimateFormScreen, SelfMain, IntimateMain },{ headerMode : null });
-export default createStackNavigator({ TermScreen, UserScreen, SelfFormScreen, IntimateFormScreen, Main },{ headerMode : null });
+export default createStackNavigator({ TermScreen, UserScreen, SelfFormScreen, IntimateFormScreen, SelfMain },{ headerMode : null });

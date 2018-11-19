@@ -20,7 +20,7 @@ class Main extends Component {
           <Avatar
             large
             rounded
-            icon={{name: 'user', type: 'font-awesome'}}
+            icon={{name: 'key', type: 'font-awesome'}}
             onPress={() => console.log("Works!")}
             activeOpacity={0.7}
             containerStyle={{marginLeft: 10}}
@@ -29,7 +29,7 @@ class Main extends Component {
           <Avatar
             large
             rounded
-            icon={{name: 'star', type: 'font-awesome'}}
+            icon={{name: 'heart', type: 'font-awesome'}}
             onPress={() => console.log("Works!")}
             activeOpacity={0.7}
             containerStyle={{ marginLeft: 79}}
@@ -37,9 +37,17 @@ class Main extends Component {
           
         </View>
 
-        <View style={styles.MenuMain1}>
-          <Text style={{color: '#455A64',fontSize: 20,fontWeight: 'bold',marginLeft: 10}}>ไขคำถาม...{'\n'}ไขข้อข้องใจ</Text>
-          <Text style={{color: '#455A64',fontSize: 20,fontWeight: 'bold',marginLeft: 70}}>เติมพลังใจ...{'\n'}กันเถอะ</Text>
+        <View style={styles.TextMenu1}>
+          <Text 
+            onPress={() => console.log("Works!")} 
+            style={{color: '#455A64',fontSize: 25,fontWeight: 'bold',marginLeft: 20}}>
+            ไขคำถาม...{'\n'}ไขข้อข้องใจ
+          </Text>
+          <Text 
+            onPress={() => console.log("Works!")} 
+            style={{color: '#455A64',fontSize: 25,fontWeight: 'bold',marginLeft: 60}}>
+            เติมพลังใจ...{'\n'}กันเถอะ
+          </Text>
         </View>
         
 
@@ -56,16 +64,24 @@ class Main extends Component {
           <Avatar
             large
             rounded
-            icon={{name: 'star', type: 'font-awesome'}}
+            icon={{name: 'file', type: 'font-awesome'}}
             onPress={() => console.log("Works!")}
             activeOpacity={0.7}
             containerStyle={{ marginLeft: 79, marginTop: 60}}
           />
         </View>
 
-        <View style={styles.MenuMain1}>
-          <Text style={{color: '#455A64',fontSize: 20,fontWeight: 'bold',marginLeft: 10}}>ไขคำถาม...{'\n'}ไขข้อข้องใจ</Text>
-          <Text style={{color: '#455A64',fontSize: 20,fontWeight: 'bold',marginLeft: 70}}>เติมพลังใจ...{'\n'}กันเถอะ</Text>
+        <View style={styles.TextMenu2}>
+          <Text 
+            onPress={() => console.log("Works!")} 
+            style={{color: '#455A64',fontSize: 20,fontWeight: 'bold',marginLeft: 10}}>
+            ใครสักคน{'\n'}ที่อยากคุย
+          </Text>
+          <Text 
+            onPress={() => console.log("Works!")} 
+            style={{color: '#455A64',fontSize: 20,fontWeight: 'bold',marginLeft: 70}}>
+            แบบคัดกรอง
+          </Text>
         </View>
 
       </View>
@@ -92,22 +108,31 @@ const styles = StyleSheet.create({
   },
   AvartarMain1: {
     // flex:1,
+    // backgroundColor:'red',
     flexDirection:'row',
     textAlign: 'center',
     justifyContent:'space-between',
   },
   AvartarMain2: {
     // flex:1,
+    // backgroundColor:'green',
     marginBottom:80,
     flexDirection:'row',
     textAlign: 'center',
     justifyContent:'space-between',
   },
-  MenuMain1: {
-    // flex:1,
+  TextMenu1: {
     color: '#455A64',
     textAlign: 'center',
-    fontSize: 50,
+    fontWeight: 'bold',
+    flexDirection:'row',
+    justifyContent:'space-between',
+  },
+  TextMenu2: {
+    // flex:1,
+    backgroundColor: 'yellow',
+    color: '#455A64',
+    textAlign: 'center',
     fontWeight: 'bold',
     flexDirection:'row',
     justifyContent:'space-between',

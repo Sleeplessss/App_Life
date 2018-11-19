@@ -32,7 +32,31 @@ class SelfFormScreen extends Component {
     handle_radio = data => this.setState({ 'sex': data })
 
     handleSubmit() {
-        alert('AGE : ' + this.state.age + ' SEX : '+ sex);
+        if(!(this.state.age.startsWith('0')))
+        {
+            try
+            {
+                firebase.database().ref().child('user').push().set({
+                    age : this.state.age,
+                    sex : sex
+                })
+    
+                const resetActions=StackActions.reset({
+                    index:0,
+                    actions:[NavigationActions.navigate({routeName:"SelfMain"})]
+                })
+    
+                this.props.navigation.dispatch(resetActions)
+            }
+            catch
+            {
+                ToastAndroid.show('ไม่สามารถเพิ่มข้อมูลได้! กรุณาลองใหม่อีกครั้ง',ToastAndroid.SHORT);
+            } 
+        }
+        else
+        {
+            ToastAndroid.show('กรุณากรอกอายุให้ถูกต้อง!',ToastAndroid.SHORT);
+        }
     }
 
     render() {
