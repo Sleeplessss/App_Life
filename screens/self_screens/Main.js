@@ -5,12 +5,19 @@ import { View,
   Text,
  } from 'react-native';
  import { Avatar } from 'react-native-elements';
+ 
+import { createStackNavigator } from 'react-navigation';
+import ArticleHome from '../self_screens/articles/ArticleHomeScreen';
+import ArticleDetail from '../self_screens/articles/ArticleDetail';
 
 class Main extends Component {
   constructor(props) {
     super(props);
+    // this.handleArticle = this.handleArticle.bind(this);
   }
-
+  static navigationOptions = ({
+    header : null,
+});
   render() {
     return (
       <View style={styles.container}>
@@ -20,19 +27,20 @@ class Main extends Component {
           <Avatar
             large
             rounded
-            icon={{name: 'key', type: 'font-awesome'}}
-            onPress={() => console.log("Works!")}
+            icon={{name: 'key', type: 'font-awesome', color: 'yellow'}}
+            // onPress={this.handleArticle}
+            onPress={() => this.props.navigation.navigate('ArticleHome')}
             activeOpacity={0.7}
-            containerStyle={{marginLeft: 10}}
+            containerStyle={{marginLeft: 5}}
           />
           
           <Avatar
             large
             rounded
-            icon={{name: 'heart', type: 'font-awesome'}}
+            icon={{name: 'heart', type: 'font-awesome', color: 'red'}}
             onPress={() => console.log("Works!")}
             activeOpacity={0.7}
-            containerStyle={{ marginLeft: 79}}
+            containerStyle={{ marginLeft: 95}}
           />
           
         </View>
@@ -46,7 +54,7 @@ class Main extends Component {
           <Text 
             onPress={() => console.log("Works!")} 
             style={{color: '#455A64',fontSize: 25,fontWeight: 'bold',marginLeft: 60}}>
-            เติมพลังใจ...{'\n'}กันเถอะ
+            เติมพลังใจ...{'\n'}   กันเถอะ
           </Text>
         </View>
         
@@ -55,31 +63,31 @@ class Main extends Component {
           <Avatar
             large
             rounded
-            icon={{name: 'user', type: 'font-awesome'}}
+            icon={{name: 'user', type: 'font-awesome', color: 'black'}}
             onPress={() => console.log("Works!")}
             activeOpacity={0.7}
-            containerStyle={{ marginLeft: 10, marginTop: 60}}
+            containerStyle={{ marginLeft: 5, marginTop: 60}}
           />
 
           <Avatar
             large
             rounded
-            icon={{name: 'file', type: 'font-awesome'}}
+            icon={{name: 'file', type: 'font-awesome', color: '#66ccff'}}
             onPress={() => console.log("Works!")}
             activeOpacity={0.7}
-            containerStyle={{ marginLeft: 79, marginTop: 60}}
+            containerStyle={{ marginLeft: 95, marginTop: 60}}
           />
         </View>
 
         <View style={styles.TextMenu2}>
           <Text 
             onPress={() => console.log("Works!")} 
-            style={{color: '#455A64',fontSize: 20,fontWeight: 'bold',marginLeft: 10}}>
-            ใครสักคน{'\n'}ที่อยากคุย
+            style={{color: '#455A64',fontSize: 25,fontWeight: 'bold',marginLeft: 30}}>
+              ใครสักคน...{'\n'} ที่อยากคุย
           </Text>
           <Text 
             onPress={() => console.log("Works!")} 
-            style={{color: '#455A64',fontSize: 20,fontWeight: 'bold',marginLeft: 70}}>
+            style={{color: '#455A64',fontSize: 25,fontWeight: 'bold',marginLeft: 45}}>
             แบบคัดกรอง
           </Text>
         </View>
@@ -116,7 +124,7 @@ const styles = StyleSheet.create({
   AvartarMain2: {
     // flex:1,
     // backgroundColor:'green',
-    marginBottom:80,
+    // marginBottom:80,
     flexDirection:'row',
     textAlign: 'center',
     justifyContent:'space-between',
@@ -130,7 +138,7 @@ const styles = StyleSheet.create({
   },
   TextMenu2: {
     // flex:1,
-    backgroundColor: 'yellow',
+    // backgroundColor: 'yellow',
     color: '#455A64',
     textAlign: 'center',
     fontWeight: 'bold',
@@ -139,4 +147,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Main;
+export default createStackNavigator({ Main, ArticleHome, ArticleDetail },{ headerMode : null });
