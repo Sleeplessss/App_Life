@@ -6,10 +6,8 @@ import {
   View,
 } from 'react-native';
 import { Button } from 'react-native-elements';
-import { createStackNavigator } from 'react-navigation';
 
-
-class UserScreen extends Component {
+export default class UserScreen extends Component {
 
     render() {
         return (
@@ -78,4 +76,3 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
 });
-export default UserScreen;

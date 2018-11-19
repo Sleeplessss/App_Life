@@ -1,20 +1,24 @@
 import React, { Component } from 'react';
-// import { View, Text } from 'react-native';
+import firebase from 'firebase';
 import {
     View,
     StyleSheet,
     Alert,
     TextInput,
     Text,
-    AsyncStorage
+    AsyncStorage,
+    ToastAndroid
 } from 'react-native';
+import {
+    createDrawerNavigator,
+    createStackNavigator,
+    StackActions,
+    NavigationActions,
+  } from 'react-navigation';
 import { Button } from 'react-native-elements';
 import RadioGroup from 'react-native-radio-buttons-group';
-import { createStackNavigator } from 'react-navigation';
-import Main from './Main';
 
-
-class SelfFormScreen extends Component {
+export default class SelfFormScreen extends Component {
 
     constructor(props) {
         super(props);
@@ -29,7 +33,7 @@ class SelfFormScreen extends Component {
         ],
     }
 
-    handle_radio = data => this.setState({ 'sex': data })
+    handle_radio = data => this.setState({ 'sex' : data })
 
     handleSubmit() {
         if(!(this.state.age.startsWith('0')))
@@ -37,6 +41,7 @@ class SelfFormScreen extends Component {
             try
             {
                 firebase.database().ref().child('user').push().set({
+                    type : 'ตนเอง',
                     age : this.state.age,
                     sex : sex
                 })
@@ -77,22 +82,22 @@ class SelfFormScreen extends Component {
                         style={{ height: 60, borderColor: 'gray', borderWidth: 2 }}
                         placeholder="กรอกอายุ"
                         keyboardType='numeric'
-                        maxLength={3}
+                        maxLength={2}
                         fontWeight='bold'
                         textAlign='center'
                         value={this.state.age}
-                        onChangeText={ age => this.setState({ age }) }
+                        onChangeText={age => this.setState({ age })}
                     />
                     <Text>{'\n'}{'\n'}</Text>
-                    <RadioGroup 
-                        radioButtons={this.state.data} 
-                        onPress={this.handle_radio} 
-                        flexDirection='row' 
+                    <RadioGroup
+                        radioButtons={this.state.data}
+                        onPress={this.handle_radio}
+                        flexDirection='row'
                     />
                     <Text>{'\n'}{'\n'}</Text>
                     <Button
                         large
-                        onPress={()=> this.props.navigation.navigate('Main')}
+                        onPress={this.handleSubmit}
                         title='ตกลง'
                         color='#000'
                         buttonStyle={{ backgroundColor: '#A5D6A7', borderRadius: 30 }}
@@ -118,5 +123,3 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
 });
-
-export default SelfFormScreen;
