@@ -23,7 +23,7 @@ class Main extends Component {
             icon={{name: 'user', type: 'font-awesome'}}
             onPress={() => console.log("Works!")}
             activeOpacity={0.7}
-            containerStyle={{marginLeft: 20,marginBottom:50}}
+            containerStyle={{marginLeft: 10}}
           />
           
           <Avatar
@@ -32,14 +32,14 @@ class Main extends Component {
             icon={{name: 'star', type: 'font-awesome'}}
             onPress={() => console.log("Works!")}
             activeOpacity={0.7}
-            containerStyle={{ marginLeft: 80}}
+            containerStyle={{ marginLeft: 79}}
           />
+          
         </View>
 
         <View style={styles.MenuMain1}>
-        <Text>Test</Text>
-
-        <Text>Test</Text>
+          <Text style={{color: '#455A64',fontSize: 20,fontWeight: 'bold',marginLeft: 10}}>ไขคำถาม...{'\n'}ไขข้อข้องใจ</Text>
+          <Text style={{color: '#455A64',fontSize: 20,fontWeight: 'bold',marginLeft: 70}}>เติมพลังใจ...{'\n'}กันเถอะ</Text>
         </View>
         
 
@@ -50,7 +50,7 @@ class Main extends Component {
             icon={{name: 'user', type: 'font-awesome'}}
             onPress={() => console.log("Works!")}
             activeOpacity={0.7}
-            containerStyle={{ marginLeft: 20, marginTop: 60}}
+            containerStyle={{ marginLeft: 10, marginTop: 60}}
           />
 
           <Avatar
@@ -59,8 +59,13 @@ class Main extends Component {
             icon={{name: 'star', type: 'font-awesome'}}
             onPress={() => console.log("Works!")}
             activeOpacity={0.7}
-            containerStyle={{ marginLeft: 80, marginTop: 60}}
+            containerStyle={{ marginLeft: 79, marginTop: 60}}
           />
+        </View>
+
+        <View style={styles.MenuMain1}>
+          <Text style={{color: '#455A64',fontSize: 20,fontWeight: 'bold',marginLeft: 10}}>ไขคำถาม...{'\n'}ไขข้อข้องใจ</Text>
+          <Text style={{color: '#455A64',fontSize: 20,fontWeight: 'bold',marginLeft: 70}}>เติมพลังใจ...{'\n'}กันเถอะ</Text>
         </View>
 
       </View>
@@ -93,6 +98,7 @@ const styles = StyleSheet.create({
   },
   AvartarMain2: {
     // flex:1,
+    marginBottom:80,
     flexDirection:'row',
     textAlign: 'center',
     justifyContent:'space-between',
