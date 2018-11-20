@@ -3,15 +3,11 @@ import firebase from 'firebase';
 import {
     View,
     StyleSheet,
-    Alert,
     TextInput,
     Text,
-    AsyncStorage,
     ToastAndroid
 } from 'react-native';
 import {
-    createDrawerNavigator,
-    createStackNavigator,
     StackActions,
     NavigationActions,
   } from 'react-navigation';

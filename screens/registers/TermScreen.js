@@ -1,13 +1,12 @@
-import React, { Component,BackAndroid } from 'react';
+import React, { Component } from 'react';
 import {
     Image,
     StyleSheet,
     Text,
-    Alert,
     View,
 } from 'react-native';
 import { Button } from 'react-native-elements';
-import { createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 // Screen
 import UserScreen from './UserScreen';
 import SelfFormScreen from '../self_screens/SelfFormScreen';
@@ -100,6 +99,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     }
 });
+
 export default createStackNavigator({ 
     TermScreen, 
     UserScreen, 

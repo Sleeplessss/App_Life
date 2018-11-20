@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import firebase from 'firebase';
 import {
   StyleSheet,
-  Alert,
   TextInput,
   Text,
   View,
@@ -10,8 +9,6 @@ import {
 } from 'react-native';
 import { Button } from 'react-native-elements';
 import {
-    createDrawerNavigator,
-    createStackNavigator,
     StackActions,
     NavigationActions,
   } from 'react-navigation';
@@ -31,9 +28,9 @@ export default class IntimateFormScreen extends Component {
             { label: 'หญิง', size: 36 },
         ],
         data_relation: [
-            { label: 'ญาติ', size: 36 },
-            { label: 'แฟน', size: 36 },
-            { label: 'เพื่อน', size: 36 },
+            { label: 'คนในครอบครัว', size: 36 },
+            { label: 'เพื่อน/คนรู้จัก', size: 36 },
+            { label: 'คนรัก/คนรู้ใจ', size: 36 },
         ]
      }
     
