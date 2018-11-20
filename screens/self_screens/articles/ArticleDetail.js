@@ -8,7 +8,9 @@ class ArticleDetail extends Component {
     this.state = {
     };
   }
-
+  static navigationOptions = ({
+    header : null,
+});
   render() {
     return (
       <View style={styles.container}>
@@ -42,6 +44,8 @@ class ArticleDetail extends Component {
             <Text style={styles.TextTitle}>ฆ่าตัวตายป้องกันได้ &ensp;</Text>
             <Icon size={30} type='font-awesome' name='chevron-right'/>
         </TouchableOpacity>
+
+        <View style={{flex:1,backgroundColor:'#FFF',height:'50%'}}></View>
 
       </View>
     );

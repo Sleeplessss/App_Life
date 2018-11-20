@@ -9,6 +9,9 @@ class EnergizeScreen extends Component {
         value: 5,
       };
   }
+  static navigationOptions = ({
+    header : null,
+});
 
   change(value) {
     this.setState(() => {

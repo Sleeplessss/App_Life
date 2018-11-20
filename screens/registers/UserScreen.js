@@ -50,8 +50,8 @@ export default class UserScreen extends Component {
                 </View>
                 
                 <Image
-                    source={require('../../assets/images/family.jpg')}
-                    style={{width: 260, height: 260}}
+                    source={require('../../assets/images/family.png')}
+                    style={{width: 300, height: 250}}
                 />
 
             </View>

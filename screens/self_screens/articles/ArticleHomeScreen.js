@@ -2,17 +2,13 @@ import React, { Component } from 'react'
 import { Text, View, StyleSheet, Image } from 'react-native'
 import { Card, ListItem, Button, Icon } from 'react-native-elements'
 export class ArticleHomeScreen extends Component {
+  static navigationOptions = ({
+    header : null,
+});
   render() {
     return (
       <View style={styles.container}>
-        <Card
-          title='HELLO WORLD'
-          iconRight={<Icon
-            name='arrow-right'
-            size={15}
-            color='black'
-          />}
-          // image={require('../../../assets/images/robot-prod.png') }
+        <Card // image={require('../../../assets/images/robot-prod.png') }
         >
           <Image
               source={require('../../../assets/images/robot-prod.png')}

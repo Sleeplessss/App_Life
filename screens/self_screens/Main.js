@@ -12,6 +12,7 @@ import ArticleHome from '../self_screens/articles/ArticleHomeScreen';
 import ArticleDetail from '../self_screens/articles/ArticleDetail';
 import EnergizeScreen from '../self_screens/energize/EnergizeScreen';
 import PhoneBook from '../self_screens/people/PhoneBook';
+import AddPhonenumber from '../self_screens/people/AddPhonenumber';
 
 class Main extends Component {
   constructor(props) {
@@ -30,7 +31,10 @@ class Main extends Component {
           <Avatar
             large
             rounded
-            icon={{name: 'key', type: 'font-awesome', color: 'yellow'}}
+            overlayContainerStyle={{backgroundColor: '#7be3fc'}}
+            source={require('../../assets/images/lock.png')}
+            style={{width: 20, height: 20}}
+            // icon={{name: 'key', type: 'font-awesome', color: 'yellow'}}
             // onPress={this.handleArticle}
             onPress={() => this.props.navigation.navigate('ArticleHome')}
             activeOpacity={0.7}
@@ -40,7 +44,8 @@ class Main extends Component {
           <Avatar
             large
             rounded
-            icon={{name: 'heart', type: 'font-awesome', color: 'red'}}
+            source={require('../../assets/images/exercise.png')}
+            // icon={{name: 'heart', type: 'font-awesome', color: 'red'}}
             onPress={() => this.props.navigation.navigate('EnergizeScreen')}
             activeOpacity={0.7}
             containerStyle={{ marginLeft: 95}}
@@ -66,7 +71,8 @@ class Main extends Component {
           <Avatar
             large
             rounded
-            icon={{name: 'user', type: 'font-awesome', color: 'black'}}
+            source={require('../../assets/images/girl.png')}
+            // icon={{name: 'user', type: 'font-awesome', color: 'black'}}
             onPress={() => this.props.navigation.navigate('PhoneBook')}
             activeOpacity={0.7}
             containerStyle={{ marginLeft: 5, marginTop: 60}}
@@ -75,7 +81,8 @@ class Main extends Component {
           <Avatar
             large
             rounded
-            icon={{name: 'file', type: 'font-awesome', color: '#66ccff'}}
+            source={require('../../assets/images/form.png')}
+            // icon={{name: 'file', type: 'font-awesome', color: '#66ccff'}}
             onPress={() => console.log("Works!")}
             activeOpacity={0.7}
             containerStyle={{ marginLeft: 95, marginTop: 60}}
@@ -151,4 +158,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default createStackNavigator({ Main, ArticleHome, ArticleDetail, EnergizeScreen, PhoneBook },{ headerMode : null });
+export default createStackNavigator({ Main, ArticleHome, ArticleDetail, EnergizeScreen, PhoneBook, AddPhonenumber },{ headerMode : null });

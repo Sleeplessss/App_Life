@@ -25,7 +25,7 @@ class TermScreen extends Component {
 
             <View style={styles.container}>
             <Image
-                source={require('../../assets/images/test_logo.png')}
+                source={require('../../assets/images/logo.png')}
                 style={{width: 200, height: 200}}
             />
 

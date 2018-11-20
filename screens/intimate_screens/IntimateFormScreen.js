@@ -84,9 +84,9 @@ export default class IntimateFormScreen extends Component {
                     และเลือกเพศของคุณ
                     {'\n'}{'\n'}
                 </Text>
-                <View style={{flex:1,width:'65%'}}>
+                <View>
                     <TextInput
-                        style={{height: 60, borderColor: 'gray', borderWidth: 2}}
+                        style={{height: 60, borderColor: 'gray', borderWidth: 2, width:180}}
                         placeholder = "กรอกอายุ"
                         keyboardType='numeric'
                         maxLength = {3}
@@ -96,6 +96,9 @@ export default class IntimateFormScreen extends Component {
                         onChangeText={age => this.setState({ age })}
                     />
                     <Text>{'\n'}{'\n'}</Text>
+                </View>
+
+                <View style={styles.radioBt}>
                     <RadioGroup radioButtons={this.state.data_sex} onPress={this.handle_sex} flexDirection='row' />
                     <Text>{'\n'}{'\n'}</Text>
                     <RadioGroup radioButtons={this.state.data_relation} onPress={this.handle_relation} flexDirection='row' />
@@ -105,7 +108,7 @@ export default class IntimateFormScreen extends Component {
                         onPress={this.handleSubmit}
                         title = 'ตกลง'
                         color= '#000'
-                        buttonStyle = {{ backgroundColor: '#A5D6A7', borderRadius: 30 }}
+                        buttonStyle = {{ backgroundColor: '#A5D6A7', borderRadius: 30, width:130 }}
                     />
                 </View>
                 
@@ -122,10 +125,15 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     SelfText: {
-        marginTop: 30,
+        // marginTop: 15,
         color: '#455A64',
         textAlign: 'center',
         fontSize: 20,
         fontWeight: 'bold',
     },
+    radioBt: {
+        alignContent: 'center',
+        alignItems: 'center',
+        justifyContent: 'center'
+    }
 });

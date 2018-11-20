@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { Button } from 'react-native-elements'
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 class PhoneBook extends Component {
   constructor(props) {
@@ -13,7 +15,28 @@ class PhoneBook extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.AddNameList}> รายชื่อ </Text>
+
+      <View style={{width:'100%'}}>
+          <Button 
+          onPress={()=>this.props.navigation.navigate('AddPhonenumber')}
+          large
+          title= 'รายชื่อ'
+          color= '#000'
+          fontWeight= 'bold'
+          fontSize={25}
+          iconRight= {{
+          size:25,
+          name:'plus-circle',
+          type:'font-awesome',
+          color:'#08A127'
+        }}
+          buttonStyle={{
+            backgroundColor: '#D7D7D7'
+          }}
+          />
+          <Text>{'\n'}{'\n'}</Text>
+      </View>
+        
       </View>
     );
   }
@@ -22,13 +45,9 @@ const styles = StyleSheet.create({
     container: {
         flex:1,
         backgroundColor: '#ffffff',
-        alignContent: 'center',
-        alignItems: 'center',
-        justifyContent: 'center'
+        // alignContent: 'center',
+        // alignItems: 'center',
+        // justifyContent: 'center'
     },
-    AddNameList: {
-        fontSize:25,
-        color:'#455A64'
-    }
 });
 export default PhoneBook;

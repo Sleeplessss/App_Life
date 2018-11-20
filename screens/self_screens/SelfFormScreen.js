@@ -96,6 +96,8 @@ export default class SelfFormScreen extends Component {
                         onPress={this.handleSubmit}
                         title='ตกลง'
                         color='#000'
+                        fontWeight= 'bold'
+                        fontSize={25}
                         buttonStyle={{ backgroundColor: '#A5D6A7', borderRadius: 30 }}
                     />
                 </View>
