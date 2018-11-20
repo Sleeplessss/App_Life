@@ -7,7 +7,9 @@ class PhoneBook extends Component {
     this.state = {
     };
   }
-
+  static navigationOptions = ({
+    header : null,
+});
   render() {
     return (
       <View style={styles.container}>

@@ -18,9 +18,9 @@ class Main extends Component {
     super(props);
     // this.handleArticle = this.handleArticle.bind(this);
   }
-//   static navigationOptions = ({
-//     header : null,
-// });
+  static navigationOptions = ({
+    header : null,
+});
   render() {
     return (
       <View style={styles.container}>
@@ -147,6 +147,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     flexDirection:'row',
     justifyContent:'space-between',
+    marginBottom: 50
   }
 });
 
