@@ -42,13 +42,31 @@ export default class IntimateFormScreen extends Component {
         {
             try
             {
-                firebase.database().ref().child('user').push().set({
-                    type : 'ผู้ใกล้ชิด',
-                    age : this.state.age,
-                    relation : relation,
-                    sex : sex
-                })
-    
+                if (this.state.age >= 15 && this.state.age <= 24){
+                    firebase.database().ref().child('user').push().set({
+                        type : 'ผู้ใกล้ชิด',
+                        age : this.state.age,
+                        sex : sex,
+                        age_section : 'วัยรุ่น',
+                        relation : relation
+                    })
+                }else if (this.state.age >= 25 && this.state.age <= 59){
+                    firebase.database().ref().child('user').push().set({
+                        type : 'ผู้ใกล้ชิด',
+                        age : this.state.age,
+                        sex : sex,
+                        age_section : 'วัยทำงาน',
+                        relation : relation
+                    })
+                }else if (this.state.age >= 60 && this.state.age <= 99){
+                    firebase.database().ref().child('user').push().set({
+                        type : 'ผู้ใกล้ชิด',
+                        age : this.state.age,
+                        sex : sex,
+                        age_section : 'วัยสูงอายุ',
+                        relation : relation
+                    })
+                }    
                 const resetActions=StackActions.reset({
                     index:0,
                     actions:[NavigationActions.navigate({routeName:"IntimateMain"})]

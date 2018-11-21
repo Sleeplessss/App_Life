@@ -36,12 +36,28 @@ export default class SelfFormScreen extends Component {
         {
             try
             {
-                firebase.database().ref().child('user').push().set({
-                    type : 'ตนเอง',
-                    age : this.state.age,
-                    sex : sex
-                })
-    
+                if (this.state.age >= 15 && this.state.age <= 24){
+                    firebase.database().ref().child('user').push().set({
+                        type : 'ตนเอง',
+                        age : this.state.age,
+                        sex : sex,
+                        age_section : 'วัยรุ่น'
+                    })
+                }else if (this.state.age >= 25 && this.state.age <= 59){
+                    firebase.database().ref().child('user').push().set({
+                        type : 'ตนเอง',
+                        age : this.state.age,
+                        sex : sex,
+                        age_section : 'วัยทำงาน'
+                    })
+                }else if (this.state.age >= 60 && this.state.age <= 99){
+                    firebase.database().ref().child('user').push().set({
+                        type : 'ตนเอง',
+                        age : this.state.age,
+                        sex : sex,
+                        age_section : 'วัยสูงอายุ'
+                    })
+                }
                 const resetActions=StackActions.reset({
                     index:0,
                     actions:[NavigationActions.navigate({routeName:"SelfMain"})]
