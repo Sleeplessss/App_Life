@@ -10,8 +10,9 @@ import { createStackNavigator } from 'react-navigation';
 // Screens
 import Consolation from '../intimate_screens/consolation/ConsolationHome';
 import Relax from '../intimate_screens/relax/RelaxHome';
-import StartScreening from '../intimate_screens/screening/StartScreening';
+import ScreeningMain from '../intimate_screens/screening/ScreeningMain';
 import VideoHome from '../intimate_screens/video/VideoHome';
+import StartScreening from '../intimate_screens/screening/StartScreening';
 
 class Main extends Component {
   constructor(props) {
@@ -77,7 +78,7 @@ class Main extends Component {
             large
             rounded
             source={require('../../assets/images/form.png')}
-            onPress={() => this.props.navigation.navigate('StartScreening')}
+            onPress={() => this.props.navigation.navigate('ScreeningMain')}
             activeOpacity={0.7}
             containerStyle={{ marginLeft: 95, marginTop: 60}}
           />
@@ -90,7 +91,7 @@ class Main extends Component {
               เมื่อเจอไลฟ์สด..
           </Text>
           <Text 
-            onPress={() => this.props.navigation.navigate('StartScreening')} 
+            onPress={() => this.props.navigation.navigate('ScreeningMain')} 
             style={{color: '#455A64',fontSize: 25,fontWeight: 'bold',marginLeft: 20}}>
             แบบคัดกรอง
           </Text>
@@ -152,4 +153,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default createStackNavigator({ Main, Consolation, Relax, StartScreening, VideoHome },{ headerMode : null });
+export default createStackNavigator({ Main, Consolation, Relax, ScreeningMain, VideoHome, StartScreening },{ headerMode : null });

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 
-class StartScreen extends Component {
+class StartScreening extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,10 +11,10 @@ class StartScreen extends Component {
   render() {
     return (
       <View>
-        <Text> แบบคัดกรอง </Text>
+        <Text> textInComponent </Text>
       </View>
     );
   }
 }
 
-export default StartScreen;
+export default StartScreening;
