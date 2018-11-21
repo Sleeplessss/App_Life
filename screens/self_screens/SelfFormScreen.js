@@ -62,7 +62,7 @@ export default class SelfFormScreen extends Component {
                         age_section : 'วัยสูงอายุ'
                     })
                 }else{
-                    alert('แอพพลิเคชั่นนี้เหมาะสำหรับผู้ใช้อายุ 15-69 ปี เท่านั้น');
+                    alert('แอปพลิเคชั่นนี้เหมาะสำหรับผู้ใช้อายุ 15-69 ปี เท่านั้น');
                     // ToastAndroid.show('แอพพลิเคชั่นนี้เหมาะสำหรับผู้ใช้อายุ 15-69 ปี เท่านั้น',ToastAndroid.SHORT);
                 }
                 const resetActions=StackActions.reset({
