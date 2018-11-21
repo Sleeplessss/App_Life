@@ -13,6 +13,7 @@ import ArticleDetail from '../self_screens/articles/ArticleDetail';
 import EnergizeScreen from '../self_screens/energize/EnergizeScreen';
 import PhoneBook from '../self_screens/people/PhoneBook';
 import AddPhonenumber from '../self_screens/people/AddPhonenumber';
+import ScreeningMain from '../self_screens/screening/ScreeningMain';
 
 class Main extends Component {
   constructor(props) {
@@ -83,7 +84,7 @@ class Main extends Component {
             rounded
             source={require('../../assets/images/form.png')}
             // icon={{name: 'file', type: 'font-awesome', color: '#66ccff'}}
-            onPress={() => console.log("Works!")}
+            onPress={() => this.props.navigation.navigate('ScreeningMain')}
             activeOpacity={0.7}
             containerStyle={{ marginLeft: 95, marginTop: 60}}
           />
@@ -96,7 +97,7 @@ class Main extends Component {
               ใครสักคน...{'\n'} ที่อยากคุย
           </Text>
           <Text 
-            onPress={() => console.log("Works!")} 
+            onPress={() => this.props.navigation.navigate('ScreeningMain')} 
             style={{color: '#455A64',fontSize: 25,fontWeight: 'bold',marginLeft: 45}}>
             แบบคัดกรอง
           </Text>
@@ -158,4 +159,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default createStackNavigator({ Main, ArticleHome, ArticleDetail, EnergizeScreen, PhoneBook, AddPhonenumber },{ headerMode : null });
+export default createStackNavigator({ Main, ArticleHome, ArticleDetail, EnergizeScreen, PhoneBook, AddPhonenumber, ScreeningMain },{ headerMode : null });
