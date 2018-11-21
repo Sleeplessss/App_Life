@@ -5,6 +5,7 @@ import {
     StyleSheet,
     TextInput,
     Text,
+    Alert,
     ToastAndroid,
     AsyncStorage
 } from 'react-native';
@@ -53,13 +54,16 @@ export default class SelfFormScreen extends Component {
                         sex : sex,
                         age_section : 'วัยทำงาน'
                     })
-                }else if (this.state.age >= 60 && this.state.age <= 99){
+                }else if (this.state.age >= 60 && this.state.age <= 69){
                     firebase.database().ref().child('user').push().set({
                         type : 'ตนเอง',
                         age : this.state.age,
                         sex : sex,
                         age_section : 'วัยสูงอายุ'
                     })
+                }else{
+                    alert('แอพพลิเคชั่นนี้เหมาะสำหรับผู้ใช้อายุ 15-69 ปี เท่านั้น');
+                    // ToastAndroid.show('แอพพลิเคชั่นนี้เหมาะสำหรับผู้ใช้อายุ 15-69 ปี เท่านั้น',ToastAndroid.SHORT);
                 }
                 const resetActions=StackActions.reset({
                     index:0,

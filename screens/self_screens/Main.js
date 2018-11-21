@@ -3,6 +3,7 @@ import { View,
   Image,
   StyleSheet,
   Text,
+  AsyncStorage
  } from 'react-native';
  import { Avatar } from 'react-native-elements';
 import { createStackNavigator } from 'react-navigation';
@@ -24,6 +25,16 @@ class Main extends Component {
   static navigationOptions = ({
     header : null,
 });
+
+  handleScreening = async () => {
+    let age = await AsyncStorage.getItem('age')
+    console.log(age);
+    if (age < 15 || age > 69) {
+      alert('ไม่สามารถทำแบบคัดกรองได้');
+    }else{
+      return this.props.navigation.navigate('ScreeningMain')
+    }
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -85,7 +96,7 @@ class Main extends Component {
             rounded
             source={require('../../assets/images/form.png')}
             // icon={{name: 'file', type: 'font-awesome', color: '#66ccff'}}
-            onPress={() => this.props.navigation.navigate('ScreeningMain')}
+            onPress={this.handleScreening}
             activeOpacity={0.7}
             containerStyle={{ marginLeft: 95, marginTop: 60}}
           />
@@ -98,7 +109,7 @@ class Main extends Component {
               ใครสักคน...{'\n'} ที่อยากคุย
           </Text>
           <Text 
-            onPress={() => this.props.navigation.navigate('ScreeningMain')} 
+            onPress={this.handleScreening} 
             style={{color: '#455A64',fontSize: 25,fontWeight: 'bold',marginLeft: 45}}>
             แบบคัดกรอง
           </Text>
