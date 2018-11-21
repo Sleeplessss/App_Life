@@ -5,7 +5,8 @@ import {
     StyleSheet,
     TextInput,
     Text,
-    ToastAndroid
+    ToastAndroid,
+    AsyncStorage
 } from 'react-native';
 import {
     StackActions,
@@ -34,6 +35,10 @@ export default class SelfFormScreen extends Component {
     handleSubmit() {
         if(!(this.state.age.startsWith('0')))
         {
+            let age = this.state.age
+            let setsex = sex
+            AsyncStorage.setItem('age', age)
+            AsyncStorage.setItem('sex', setsex)
             try
             {
                 if (this.state.age >= 15 && this.state.age <= 24){
