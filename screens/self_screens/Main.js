@@ -14,6 +14,7 @@ import EnergizeScreen from '../self_screens/energize/EnergizeScreen';
 import PhoneBook from '../self_screens/people/PhoneBook';
 import AddPhonenumber from '../self_screens/people/AddPhonenumber';
 import ScreeningMain from '../self_screens/screening/ScreeningMain';
+import StartScreening from '../self_screens/screening/StartScreening';
 
 class Main extends Component {
   constructor(props) {
@@ -159,4 +160,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default createStackNavigator({ Main, ArticleHome, ArticleDetail, EnergizeScreen, PhoneBook, AddPhonenumber, ScreeningMain },{ headerMode : null });
+export default createStackNavigator({ Main, ArticleHome, ArticleDetail, EnergizeScreen, PhoneBook, AddPhonenumber, ScreeningMain, StartScreening },{ headerMode : null });

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image, ToastAndroid, AsyncStorage } from 'react-native';
+import { View, Text, StyleSheet, Image, ToastAndroid, AsyncStorage, TouchableOpacity } from 'react-native';
 
 class ScreeningMain extends Component {
   constructor(props) {
     super(props);
+    this.handleonPress = this.handleonPress.bind(this);
     this.state = {
     };
   }
@@ -11,45 +12,53 @@ class ScreeningMain extends Component {
 //   static navigationOptions = ({
 //     header : null,
 // });
-check_data = async (section) => {
+
+handleonPress = async (section) => {
     try {
         let age = await AsyncStorage.getItem('age');
         let sex = await AsyncStorage.getItem('sex');
+        console.log("section = " + section);
         console.log("age = " + age);
         console.log("sex = " + sex);
         if (section == 'boy') {
             if (age >= 15 && age <= 24 && sex == 'ชาย') {
                 ToastAndroid.show('OK!',ToastAndroid.SHORT);
+                return this.props.navigation.navigate('StartScreening')
             }else{
                 ToastAndroid.show('ข้อมูลไม่ถูกต้อง!',ToastAndroid.SHORT);
             }
         } else if (section == 'girl') {
             if (age >= 15 && age <= 24 && sex == 'หญิง') {
                 ToastAndroid.show('OK!',ToastAndroid.SHORT);
+                return this.props.navigation.navigate('StartScreening')
             }else{
                 ToastAndroid.show('ข้อมูลไม่ถูกต้อง!',ToastAndroid.SHORT);
             }
         } else if (section == 'man') {
             if (age >= 25 && age <= 59 && sex == 'ชาย') {
                 ToastAndroid.show('OK!',ToastAndroid.SHORT);
+                return this.props.navigation.navigate('StartScreening')
             }else{
                 ToastAndroid.show('ข้อมูลไม่ถูกต้อง!',ToastAndroid.SHORT);
             }
         } else if (section == 'woman') {
             if (age >= 25 && age <= 59 && sex == 'หญิง') {
                 ToastAndroid.show('OK!',ToastAndroid.SHORT);
+                return this.props.navigation.navigate('StartScreening')
             }else{
                 ToastAndroid.show('ข้อมูลไม่ถูกต้อง!',ToastAndroid.SHORT);
             }
         }  else if (section == 'oldman') {
             if (age >= 60 && age <= 96 && sex == 'ชาย') {
                 ToastAndroid.show('OK!',ToastAndroid.SHORT);
+                return this.props.navigation.navigate('StartScreening')
             }else{
                 ToastAndroid.show('ข้อมูลไม่ถูกต้อง!',ToastAndroid.SHORT);
             }
         }  else if (section == 'oldwoman') {
             if (age >= 60 && age <= 69 && sex == 'หญิง') {
                 ToastAndroid.show('OK!',ToastAndroid.SHORT);
+                return this.props.navigation.navigate('StartScreening')
             }else{
                 ToastAndroid.show('ข้อมูลไม่ถูกต้อง!',ToastAndroid.SHORT);
             }
@@ -58,10 +67,6 @@ check_data = async (section) => {
         ToastAndroid.show('ไม่สามารถตรวจสอบข้อมูลได้!',ToastAndroid.SHORT);
     }
 }
-    handleonPress(section){
-        console.log("section = " + section);
-        // this.check_data(section)
-    }
   render() {
     return (
       <View style={styles.container}>
@@ -69,28 +74,31 @@ check_data = async (section) => {
         <Text style={styles.TxtTitle}> เลือกช่วงอายุของท่าน {'\n'}</Text>
         
         <View style={styles.ImgScreening1}>
-            <Image
-                onPress={this.handleonPress('boy')}
-                source={require('../../../assets/images/section_boy.png')}
-                style={styles.ImgStyle}
-            />
-          
-          <Image
-                onPress={this.handleonPress('girl')} 
-                source={require('../../../assets/images/section_girl.png')}
-                style={styles.ImgStyle}
-            />
-          
+
+            <TouchableOpacity onPress={()=>this.handleonPress('boy')}>
+                <Image
+                    source={require('../../../assets/images/section_boy.png')}
+                    style={styles.ImgStyle}
+                />
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={()=>this.handleonPress('girl')} >
+                <Image
+                    source={require('../../../assets/images/section_girl.png')}
+                    style={styles.ImgStyle}
+                />
+            </TouchableOpacity>
+        
         </View>
 
         <View style={styles.TextMenu1}>
           <Text 
-            onPress={this.handleonPress('boy')} 
+            onPress={()=>this.handleonPress('boy')} 
             style={{color: '#455A64',fontSize: 20,fontWeight: 'bold',marginLeft: 10}}>
             15-24 ปี
           </Text>
           <Text 
-            onPress={this.handleonPress('girl')} 
+            onPress={()=>this.handleonPress('girl')} 
             style={{color: '#455A64',fontSize: 20,fontWeight: 'bold',marginLeft: 50}}>
             15-24 ปี
           </Text>
@@ -98,54 +106,62 @@ check_data = async (section) => {
     
 
         <View style={styles.ImgScreening2}>
-            <Image
-                onPress={this.handleonPress('man')} 
-                source={require('../../../assets/images/section_man.png')}
-                style={styles.ImgStyle}
-            />
 
-          <Image
-                onPress={this.handleonPress('woman')} 
-                source={require('../../../assets/images/section_woman.png')}
-                style={styles.ImgStyle}
-            />
+            <TouchableOpacity onPress={()=>this.handleonPress('man')}>
+                <Image
+                    source={require('../../../assets/images/section_man.png')}
+                    style={styles.ImgStyle}
+                />
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={()=>this.handleonPress('woman')} >
+                <Image
+                    source={require('../../../assets/images/section_woman.png')}
+                    style={styles.ImgStyle}
+                />
+            </TouchableOpacity>
+
         </View>
 
         <View style={styles.TextMenu2}>
           <Text 
-            onPress={this.handleonPress('man')} 
+            onPress={()=>this.handleonPress('man')} 
             style={{color: '#455A64',fontSize: 20,fontWeight: 'bold',marginLeft: 10}}>
               25-59 ปี
           </Text>
           <Text 
-            onPress={this.handleonPress('woman')} 
+            onPress={()=>this.handleonPress('woman')} 
             style={{color: '#455A64',fontSize: 20,fontWeight: 'bold',marginLeft: 50}}>
               25-59 ปี
           </Text>
         </View>
 
         <View style={styles.ImgScreening3}>
-            <Image
-                onPress={this.handleonPress('oldman')}
-                source={require('../../../assets/images/section_oldman.png')}
-                style={styles.ImgStyle}
-            />
+            
+            <TouchableOpacity onPress={()=>this.handleonPress('oldman')}>
+                <Image
+                    source={require('../../../assets/images/section_oldman.png')}
+                    style={styles.ImgStyle}
+                />
+            </TouchableOpacity>
 
-          <Image
-                onPress={this.handleonPress('oldwoman')} 
-                source={require('../../../assets/images/section_oldwoman.png')}
-                style={styles.ImgStyle}
-            />
+            <TouchableOpacity onPress={()=>this.handleonPress('oldwoman')} >
+                <Image
+                    source={require('../../../assets/images/section_oldwoman.png')}
+                    style={styles.ImgStyle}
+                />
+            </TouchableOpacity>
+
         </View>
 
         <View style={styles.TextMenu2}>
           <Text 
-            onPress={this.handleonPress('oldman')} 
+            onPress={()=>this.handleonPress('oldman')} 
             style={{color: '#455A64',fontSize: 20,fontWeight: 'bold',marginLeft: 10}}>
               60-69 ปี
           </Text>
           <Text 
-            onPress={this.handleonPress('oldwoman')} 
+            onPress={()=>this.handleonPress('oldwoman')} 
             style={{color: '#455A64',fontSize: 20,fontWeight: 'bold',marginLeft: 50}}>
               60-69 ปี
           </Text>
