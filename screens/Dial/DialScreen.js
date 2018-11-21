@@ -36,18 +36,16 @@ class DialScreen extends React.Component {
 
           <View>
             <Text style={styles.MainTxt}>
-              (โทรฟรีไม่เสียค่าใช้จ่าย){'\n'}
+              (โทรฟรีไม่เสียค่าใช้จ่าย){'\n'}{'\n'}
           </Text>
           </View>
 
-          <View>
-            <Icon.Ionicons
-              onPress={this._handlePressCalling}
-              name={Platform.OS === 'ios' ? 'ios-call' : 'md-call'}
-              size={80}
-              style={{ marginBottom: -3 }}
+          <TouchableOpacity onPress={this._handlePressCalling}>
+            <Image
+                source={require('../../assets/images/phone.png')}
+                style={{width: 120, height: 120}}
             />
-          </View>
+          </TouchableOpacity>
 
           <View style={{marginBottom: 40}}>
             <Text style={styles.MainTxt}>
