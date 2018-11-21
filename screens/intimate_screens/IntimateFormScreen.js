@@ -24,13 +24,13 @@ export default class IntimateFormScreen extends Component {
     state = {
         age: '',
         data_sex: [
-            { label: 'ชาย', size: 36 },
-            { label: 'หญิง', size: 36 },
+            { label: 'ชาย', size: 35 },
+            { label: 'หญิง', size: 35 },
         ],
         data_relation: [
-            { label: 'คนในครอบครัว', size: 36 },
-            { label: 'เพื่อน/คนรู้จัก', size: 36 },
-            { label: 'คนรัก/คนรู้ใจ', size: 36 },
+            { label: 'คนในครอบครัว', size: 35 },
+            { label: 'เพื่อน/คนรู้จัก', size: 35 },
+            { label: 'คนรัก/คนรู้ใจ', size: 35 },
         ]
      }
     
@@ -58,7 +58,7 @@ export default class IntimateFormScreen extends Component {
                         age_section : 'วัยทำงาน',
                         relation : relation
                     })
-                }else if (this.state.age >= 60 && this.state.age <= 99){
+                }else if (this.state.age >= 60 && this.state.age <= 69){
                     firebase.database().ref().child('user').push().set({
                         type : 'ผู้ใกล้ชิด',
                         age : this.state.age,
@@ -118,9 +118,9 @@ export default class IntimateFormScreen extends Component {
 
                 <View style={styles.radioBt}>
                     <RadioGroup radioButtons={this.state.data_sex} onPress={this.handle_sex} flexDirection='row' />
-                    <Text>{'\n'}{'\n'}</Text>
-                    <RadioGroup radioButtons={this.state.data_relation} onPress={this.handle_relation} flexDirection='row' />
-                    <Text>{'\n'}{'\n'}</Text>
+                    <Text>{'\n'}</Text>
+                    <RadioGroup radioButtons={this.state.data_relation} onPress={this.handle_relation} flexDirection='column' />
+                    <Text>{'\n'}</Text>
                     <Button
                         large
                         onPress={this.handleSubmit}
@@ -150,6 +150,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     radioBt: {
+        marginBottom: 20,
         alignContent: 'center',
         alignItems: 'center',
         justifyContent: 'center'

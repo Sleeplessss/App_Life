@@ -16,7 +16,7 @@ class ConsolationHome extends Component {
     return (
       <View style={styles.container}>
 
-      <View style={{width:'100%'}}>
+      <View style={{flex:1, width:'100%'}}>
           <Button 
           onPress={()=> console.log('comunication')}
           large
