@@ -35,10 +35,8 @@ export default class SelfFormScreen extends Component {
     handleSubmit() {
         if(!(this.state.age.startsWith('0')))
         {
-            let age = this.state.age
-            let setsex = sex
-            AsyncStorage.setItem('age', age)
-            AsyncStorage.setItem('sex', setsex)
+            AsyncStorage.setItem('age', this.state.age)
+            AsyncStorage.setItem('sex', sex)
             try
             {
                 if (this.state.age >= 15 && this.state.age <= 24){
