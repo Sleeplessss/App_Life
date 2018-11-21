@@ -4,7 +4,8 @@ import { AppLoading, Asset, Font, Icon } from 'expo';
 import * as firebase from 'firebase';
 import AppNavigator from './navigation/AppNavigator';
 import TermScreen from './screens/registers/TermScreen';
-import Main from './screens/self_screens/Main';
+import SelfMain from './screens/self_screens/Main';
+import Main from './screens/intimate_screens/Main';
 
 export default class App extends React.Component {
 
@@ -38,7 +39,7 @@ export default class App extends React.Component {
         <View style={styles.container}>
           {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
           {/* <AppNavigator /> */}
-          <TermScreen/>
+          <Main/>
         </View>
       );
     }
