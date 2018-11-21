@@ -22,16 +22,21 @@ class DialScreen extends React.Component {
     return (
       <View style={styles.container}>
         <View style={{ flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center' }}>
-
           <View>
-            <Text>
-              สายด่วนสุขภาพจิต
+            <Image
+              source={require('../../assets/images/antique.png')}
+              style={{width: 60, height: 60}}
+            />
+          </View>
+          <View>
+            <Text style={styles.MainTxt}>
+              {'\n'}สายด่วนสุขภาพจิต
           </Text>
           </View>
 
           <View>
-            <Text>
-              (โทรฟรีไม่เสียค่าใช้จ่าย)
+            <Text style={styles.MainTxt}>
+              (โทรฟรีไม่เสียค่าใช้จ่าย){'\n'}
           </Text>
           </View>
 
@@ -44,9 +49,9 @@ class DialScreen extends React.Component {
             />
           </View>
 
-          <View>
-            <Text>
-              1323
+          <View style={{marginBottom: 40}}>
+            <Text style={styles.MainTxt}>
+              {'\n'}1323
           </Text>
           </View>
 
@@ -67,6 +72,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  MainTxt: {
+    color: '#455A64',
+    fontSize: 25,
+  }
 }
 );
 
