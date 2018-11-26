@@ -15,8 +15,14 @@ class ConsolationHome extends Component {
   render() {
     return (
       <View style={styles.container}>
-
-      <View style={{flex:1, width:'100%'}}>
+      <TouchableOpacity style={{width: '100%', height: 80, backgroundColor: '#FFD54F',flexDirection:'row'}} onPress={()=>console.log('test')}>
+          <Text style={styles.TxtStyle}>test</Text> 
+          <Icon name='angle-right' type='font-awesome' color='#000'/>
+      </TouchableOpacity>
+      <TouchableOpacity style={{width: '100%', height: 80, backgroundColor: '#FFECB3'}} onPress={()=>console.log('test')}>
+          <Text style={styles.TxtStyle}>test</Text>
+      </TouchableOpacity>
+      {/* <View style={{flex:1, width:'100%'}}>
           <Button 
           onPress={()=> console.log('comunication')}
           large
@@ -70,8 +76,8 @@ class ConsolationHome extends Component {
             backgroundColor: '#FFD54F'
           }}
           />
-          <Text>{'\n'}{'\n'}</Text>
-      </View>
+          <Text>{'\n'}{'\n'}</Text> */}
+      {/* </View> */}
         
       </View>
     );
@@ -81,6 +87,14 @@ const styles = StyleSheet.create({
     container: {
         flex:1,
         backgroundColor: '#ffffff',
+        flexDirection: 'column'
     },
+    TxtStyle:{
+      color: '#000',
+      fontWeight: 'bold',
+      fontSize: 25,
+      justifyContent: 'space-between',
+      alignSelf: 'center',
+    }
 });
 export default ConsolationHome;
