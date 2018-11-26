@@ -17,54 +17,55 @@ import IntimateMain from '../intimate_screens/Main';
 class TermScreen extends Component {
 
     static navigationOptions = ({
-        header : null,
+        header: null,
     });
 
     render() {
         return (
 
             <View style={styles.container}>
-            <Image
-                source={require('../../assets/images/logo.png')}
-                style={{width: 200, height: 200}}
-            />
-
-            <Text style={styles.acceptText}>
-                {'\n'}ต้องการเข้าถึงข้อมูล{'\n'}เพศและอายุของท่าน{'\n'}{'\n'}
-            </Text>
-
-            <View style={styles.termButton}>
-                <Button
-                    large
-                    onPress = { () => this.props.navigation.navigate('UserScreen')}
-                    title = "อนุญาต"
-                    titleStyle={{ fontSize: "50" }}
-                    color = '#455A64'
-                    fontWeight = 'bold'
-                    buttonStyle = {{
-                        backgroundColor: '#90CAF9',
-                        width: 120,
-                        borderRadius: 30,
-                    }}
+                <Image
+                    source={require('../../assets/images/logo.png')}
+                    style={{ width: 200, height: 200 }}
+                    resizeMode="contain"
                 />
-                <Button
-                    large
-                    onPress = {this.closeApp}
-                    title = "ไม่อนุญาต"
-                    titleStyle={{ fontSize: "50" }}
-                    color = '#455A64'
-                    fontWeight = 'bold'
-                    buttonStyle = {{
-                        backgroundColor: '#FFD54F',
-                        width: 120,
-                        borderRadius: 30,
-                    }}
-                />
+
+                <Text style={styles.acceptText}>
+                    {'\n'}ต้องการเข้าถึงข้อมูล{'\n'}เพศและอายุของท่าน{'\n'}{'\n'}
+                </Text>
+
+                <View style={styles.termButton}>
+                    <Button
+                        large
+                        onPress={() => this.props.navigation.navigate('UserScreen')}
+                        title="อนุญาต"
+                        titleStyle={{ fontSize: "50" }}
+                        color='#455A64'
+                        fontFamily='cloud-light'
+                        buttonStyle={{
+                            backgroundColor: '#90CAF9',
+                            width: 120,
+                            borderRadius: 30,
+                        }}
+                    />
+                    <Button
+                        large
+                        onPress={this.closeApp}
+                        title="ไม่อนุญาต"
+                        titleStyle={{ fontSize: "50" }}
+                        color='#455A64'
+                        fontFamily='cloud-light'
+                        buttonStyle={{
+                            backgroundColor: '#FFD54F',
+                            width: 120,
+                            borderRadius: 30,
+                        }}
+                    />
+                </View>
             </View>
-        </View>
         );
     }
-    closeApp () {
+    closeApp() {
         console.log('Exit!');
     }
 }
@@ -75,6 +76,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
+
     },
     accept: {
         marginRight: 40,
@@ -91,7 +93,7 @@ const styles = StyleSheet.create({
         color: '#455A64',
         textAlign: 'center',
         fontSize: 20,
-        fontWeight: 'bold',
+        fontFamily: 'cloud-light'
     },
     termButton: {
         flexDirection: 'row',
@@ -100,11 +102,17 @@ const styles = StyleSheet.create({
     }
 });
 
-export default createStackNavigator({ 
-    TermScreen, 
-    UserScreen, 
-    SelfFormScreen, 
-    IntimateFormScreen, 
+export default createStackNavigator({
+    TermScreen,
+    UserScreen,
+    SelfFormScreen,
+    IntimateFormScreen,
     SelfMain,
     IntimateMain
-},{ headerMode : null });
+},
+    {
+        headerMode: null,
+        style: {
+            backgroundColor: '#eee'
+        }
+    });
