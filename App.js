@@ -48,9 +48,31 @@ export default class App extends React.Component {
   _loadResourcesAsync = async () => {
     return Promise.all([
       Asset.loadAsync([
-        require('./assets/images/logo.png'),
+        require('./assets/images/antique.png'),
+        require('./assets/images/exercise.png'),
+        require('./assets/images/family.png'),
+        require('./assets/images/form.png'),
+        require('./assets/images/girl.png'),
         require('./assets/images/header-life.png'),
-        require('./assets/images/family.png')
+        require('./assets/images/hug.png'),
+        require('./assets/images/icon.png'),
+        require('./assets/images/lock.png'),
+        require('./assets/images/logo.png'),
+        require('./assets/images/phone.png'),
+        require('./assets/images/relax.png'),
+        require('./assets/images/robot-dev.png'),
+        require('./assets/images/robot-prod.png'),
+        require('./assets/images/section_boy.png'),
+        require('./assets/images/section_girl.png'),
+        require('./assets/images/section_man.png'),
+        require('./assets/images/section_girl.png'),
+        require('./assets/images/section_oldman.png'),
+        require('./assets/images/section_oldwoman.png'),
+        require('./assets/images/section_woman.png'),
+        require('./assets/images/splash.png'),
+        require('./assets/images/test_logo.png'),
+        require('./assets/images/video-camera.png'),
+        
       ]),
       Font.loadAsync({
         // This is the font that we are using for our tab bar
@@ -58,6 +80,7 @@ export default class App extends React.Component {
         // We include SpaceMono because we use it in HomeScreen.js. Feel free
         // to remove this if you are not using it in your app
         'cloud-light': require('./assets/fonts/Cloud-Light.otf'),
+        'cloud-bold': require('./assets/fonts/Cloud-Bold.otf'),
         'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf'),
       }),
     ]);

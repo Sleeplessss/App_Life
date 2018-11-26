@@ -53,12 +53,12 @@ class Main extends Component {
         <View style={styles.TextMenu1}>
           <Text 
             onPress={() => this.props.navigation.navigate('Consolation')} 
-            style={{color: '#455A64',fontSize: 25,fontWeight: 'bold',marginLeft: 20}}>
+            style={{color: '#455A64',fontSize: 25,fontFamily: 'cloud-bold',marginLeft: 20}}>
             คำปลอบใจ
           </Text>
           <Text 
             onPress={() => this.props.navigation.navigate('Relax')} 
-            style={{color: '#455A64',fontSize: 25,fontWeight: 'bold',marginLeft: 60}}>
+            style={{color: '#455A64',fontSize: 25,fontFamily: 'cloud-bold',marginLeft: 60}}>
             วิธีคลายเครียด
           </Text>
         </View>
@@ -87,12 +87,12 @@ class Main extends Component {
         <View style={styles.TextMenu2}>
           <Text 
             onPress={() => this.props.navigation.navigate('VideoHome')} 
-            style={{color: '#455A64',fontSize: 25,fontWeight: 'bold',marginLeft: 10}}>
+            style={{color: '#455A64',fontSize: 25,fontFamily: 'cloud-bold',marginLeft: 10}}>
               เมื่อเจอไลฟ์สด..
           </Text>
           <Text 
             onPress={() => this.props.navigation.navigate('ScreeningMain')} 
-            style={{color: '#455A64',fontSize: 25,fontWeight: 'bold',marginLeft: 20}}>
+            style={{color: '#455A64',fontSize: 25,fontFamily: 'cloud-bold',marginLeft: 20}}>
             แบบคัดกรอง
           </Text>
         </View>
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     color: '#455A64',
     textAlign: 'center',
     fontSize: 25,
-    fontWeight: 'bold',
+    fontFamily: 'cloud-bold',
   },
   AvartarMain1: {
     // flex:1,
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
   TextMenu1: {
     color: '#455A64',
     textAlign: 'center',
-    fontWeight: 'bold',
+    fontFamily: 'cloud-bold',
     flexDirection:'row',
     justifyContent:'space-between',
   },
@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
     // backgroundColor: 'yellow',
     color: '#455A64',
     textAlign: 'center',
-    fontWeight: 'bold',
+    fontFamily: 'cloud-bold',
     flexDirection:'row',
     justifyContent:'space-between',
     marginBottom: 50

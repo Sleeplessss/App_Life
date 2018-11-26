@@ -94,12 +94,12 @@ handleonPress = async (section) => {
         <View style={styles.TextMenu1}>
           <Text 
             onPress={()=>this.handleonPress('boy')} 
-            style={{color: '#455A64',fontSize: 20,fontWeight: 'bold',marginLeft: 10}}>
+            style={{color: '#455A64',fontSize: 20,fontFamily: 'cloud-bold',marginLeft: 10}}>
             15-24 ปี
           </Text>
           <Text 
             onPress={()=>this.handleonPress('girl')} 
-            style={{color: '#455A64',fontSize: 20,fontWeight: 'bold',marginLeft: 50}}>
+            style={{color: '#455A64',fontSize: 20,fontFamily: 'cloud-bold',marginLeft: 50}}>
             15-24 ปี
           </Text>
         </View>
@@ -126,12 +126,12 @@ handleonPress = async (section) => {
         <View style={styles.TextMenu2}>
           <Text 
             onPress={()=>this.handleonPress('man')} 
-            style={{color: '#455A64',fontSize: 20,fontWeight: 'bold',marginLeft: 10}}>
+            style={{color: '#455A64',fontSize: 20,fontFamily: 'cloud-bold',marginLeft: 10}}>
               25-59 ปี
           </Text>
           <Text 
             onPress={()=>this.handleonPress('woman')} 
-            style={{color: '#455A64',fontSize: 20,fontWeight: 'bold',marginLeft: 50}}>
+            style={{color: '#455A64',fontSize: 20,fontFamily: 'cloud-bold',marginLeft: 50}}>
               25-59 ปี
           </Text>
         </View>
@@ -157,12 +157,12 @@ handleonPress = async (section) => {
         <View style={styles.TextMenu2}>
           <Text 
             onPress={()=>this.handleonPress('oldman')} 
-            style={{color: '#455A64',fontSize: 20,fontWeight: 'bold',marginLeft: 10}}>
+            style={{color: '#455A64',fontSize: 20,fontFamily: 'cloud-bold',marginLeft: 10}}>
               60-69 ปี
           </Text>
           <Text 
             onPress={()=>this.handleonPress('oldwoman')} 
-            style={{color: '#455A64',fontSize: 20,fontWeight: 'bold',marginLeft: 50}}>
+            style={{color: '#455A64',fontSize: 20,fontFamily: 'cloud-bold',marginLeft: 50}}>
               60-69 ปี
           </Text>
         </View>
@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
         color: '#455A64',
         textAlign: 'center',
         fontSize: 25,
-        fontWeight: 'bold',
+        fontFamily: 'cloud-bold',
     },
     ImgScreening1: {
         flexDirection:'row',
@@ -203,14 +203,14 @@ const styles = StyleSheet.create({
     TextMenu1: {
         color: '#455A64',
         textAlign: 'center',
-        fontWeight: 'bold',
+        fontFamily: 'cloud-bold',
         flexDirection:'row',
         justifyContent:'space-between',
     },
     TextMenu2: {
         color: '#455A64',
         textAlign: 'center',
-        fontWeight: 'bold',
+        fontFamily: 'cloud-bold',
         flexDirection:'row',
         justifyContent:'space-between',
         // marginBottom: 50
@@ -218,7 +218,7 @@ const styles = StyleSheet.create({
     TextMenu3: {
         color: '#455A64',
         textAlign: 'center',
-        fontWeight: 'bold',
+        fontFamily: 'cloud-bold',
         flexDirection:'row',
         justifyContent:'space-between',
         marginBottom: 30

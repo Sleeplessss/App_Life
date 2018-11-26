@@ -92,20 +92,20 @@ const styles = StyleSheet.create({
         color: '#455A64',
         marginLeft:65,
         fontSize: 20,
-        fontWeight: 'bold'
+        fontFamily: 'cloud-bold'
     },
     TitleBody2: {
         color: '#455A64',
         marginLeft:97,
         textAlign: 'center',
         fontSize: 20,
-        fontWeight: 'bold'
+        fontFamily: 'cloud-bold'
     },
     TitleBody3: {
         color: '#455A64',
         marginLeft:98,
         fontSize: 20,
-        fontWeight: 'bold'
+        fontFamily: 'cloud-bold'
     },
     SliderStyle: {
         alignContent: 'center',
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
         color: '#455A64',
         textAlign: 'center',
         fontSize: 25,
-        fontWeight: 'bold'
+        fontFamily: 'cloud-bold'
     },
     track: {
         height: 18,

@@ -132,7 +132,7 @@ export default class SelfFormScreen extends Component {
                         <RadioGroup
                             radioButtons={this.state.data}
                             onPress={this.handle_radio}
-                            fontFamily='cloud-light'
+                            fontFamily='cloud-bold'
                             flexDirection='row'
                         />
                         <Text>{'\n'}{'\n'}</Text>
@@ -140,9 +140,9 @@ export default class SelfFormScreen extends Component {
                             large
                             onPress={this.handleSubmit}
                             title='ตกลง'
-                            fontFamily='cloud-light'
+                            fontFamily='cloud-bold'
                             color='#000'
-                            fontSize={25}
+                            fontSize={22}
                             buttonStyle={{ backgroundColor: '#A5D6A7', borderRadius: 30 }}
                         />
                     </View>
@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
         marginTop: 80,
         color: '#455A64',
         textAlign: 'center',
-        fontSize: 20,
-        fontFamily: 'cloud-light'
+        fontSize: 30,
+        fontFamily: 'cloud-bold'
     },
 });

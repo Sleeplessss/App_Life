@@ -69,12 +69,12 @@ class Main extends Component {
         <View style={styles.TextMenu1}>
           <Text 
             onPress={() => this.props.navigation.navigate('ArticleHome')} 
-            style={{color: '#455A64',fontSize: 25,fontWeight: 'bold',marginLeft: 20}}>
+            style={{color: '#455A64',fontSize: 22,fontFamily: 'cloud-bold',marginLeft: 10}}>
             ไขคำถาม...{'\n'}ไขข้อข้องใจ
           </Text>
           <Text 
             onPress={() => this.props.navigation.navigate('EnergizeScreen')} 
-            style={{color: '#455A64',fontSize: 25,fontWeight: 'bold',marginLeft: 60}}>
+            style={{color: '#455A64',fontSize: 22,fontFamily: 'cloud-bold',marginLeft: 80}}>
             เติมพลังใจ...{'\n'}   กันเถอะ
           </Text>
         </View>
@@ -105,12 +105,12 @@ class Main extends Component {
         <View style={styles.TextMenu2}>
           <Text 
             onPress={() => this.props.navigation.navigate('PhoneBook')} 
-            style={{color: '#455A64',fontSize: 25,fontWeight: 'bold',marginLeft: 30}}>
+            style={{color: '#455A64',fontSize: 22,fontFamily: 'cloud-bold',marginLeft: 10}}>
               ใครสักคน...{'\n'} ที่อยากคุย
           </Text>
           <Text 
             onPress={this.handleScreening} 
-            style={{color: '#455A64',fontSize: 25,fontWeight: 'bold',marginLeft: 45}}>
+            style={{color: '#455A64',fontSize: 22,fontFamily: 'cloud-bold',marginLeft: 90}}>
             แบบคัดกรอง
           </Text>
         </View>
@@ -134,8 +134,8 @@ const styles = StyleSheet.create({
     // backgroundColor:'red',
     color: '#455A64',
     textAlign: 'center',
-    fontSize: 25,
-    fontWeight: 'bold',
+    fontSize: 30,
+    fontFamily: 'cloud-bold',
   },
   AvartarMain1: {
     // flex:1,
@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
   TextMenu1: {
     color: '#455A64',
     textAlign: 'center',
-    fontWeight: 'bold',
+    fontFamily: 'cloud-bold',
     flexDirection:'row',
     justifyContent:'space-between',
   },
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
     // backgroundColor: 'yellow',
     color: '#455A64',
     textAlign: 'center',
-    fontWeight: 'bold',
+    fontFamily: 'cloud-bold',
     flexDirection:'row',
     justifyContent:'space-between',
     marginBottom: 50

@@ -39,9 +39,9 @@ class TermScreen extends Component {
                         large
                         onPress={() => this.props.navigation.navigate('UserScreen')}
                         title="อนุญาต"
-                        titleStyle={{ fontSize: "50" }}
+                        fontSize={22}
                         color='#455A64'
-                        fontFamily='cloud-light'
+                        fontFamily='cloud-bold'
                         buttonStyle={{
                             backgroundColor: '#90CAF9',
                             width: 120,
@@ -52,9 +52,9 @@ class TermScreen extends Component {
                         large
                         onPress={this.closeApp}
                         title="ไม่อนุญาต"
-                        titleStyle={{ fontSize: "50" }}
+                        fontSize={22}
                         color='#455A64'
-                        fontFamily='cloud-light'
+                        fontFamily='cloud-bold'
                         buttonStyle={{
                             backgroundColor: '#FFD54F',
                             width: 120,
@@ -92,8 +92,8 @@ const styles = StyleSheet.create({
     acceptText: {
         color: '#455A64',
         textAlign: 'center',
-        fontSize: 20,
-        fontFamily: 'cloud-light'
+        fontSize: 30,
+        fontFamily: 'cloud-bold'
     },
     termButton: {
         flexDirection: 'row',

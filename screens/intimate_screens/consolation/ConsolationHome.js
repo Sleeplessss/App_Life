@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     },
     TxtStyle:{
       color: '#000',
-      fontWeight: 'bold',
+      fontFamily: 'cloud-bold',
       fontSize: 25,
       justifyContent: 'space-between',
       alignSelf: 'center',

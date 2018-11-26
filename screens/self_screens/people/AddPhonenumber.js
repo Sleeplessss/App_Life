@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
         color: '#455A64',
         textAlign: 'center',
         fontSize: 25,
-        fontWeight: 'bold',
+        fontFamily: 'cloud-bold',
     }
 });
 export default AddPhonenumber;

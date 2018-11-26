@@ -37,7 +37,8 @@ export default class UserScreen extends Component {
                         large
                         onPress={() => this.props.navigation.navigate('SelfFormScreen')}
                         title='ตัวท่านเอง'
-                        fontFamily='cloud-light'
+                        fontSize={22}
+                        fontFamily='cloud-bold'
                         color='#455A64'
                         buttonStyle={
                             {
@@ -52,7 +53,8 @@ export default class UserScreen extends Component {
                         large
                         onPress={() => this.props.navigation.navigate('IntimateFormScreen')}
                         title='ผู้ใกล้ชิด'
-                        fontFamily='cloud-light'
+                        fontSize={22}
+                        fontFamily='cloud-bold'
                         color='#455A64'
                         buttonStyle={
                             {
@@ -89,7 +91,7 @@ const styles = StyleSheet.create({
         marginTop: 50,
         color: '#455A64',
         textAlign: 'center',
-        fontSize: 25,
-        fontFamily: 'cloud-light',
+        fontSize: 30,
+        fontFamily: 'cloud-bold',
     },
 });
