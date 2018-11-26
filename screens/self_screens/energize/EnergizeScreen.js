@@ -54,7 +54,8 @@ class EnergizeScreen extends Component {
             onPress={()=>Alert.alert('test')}
             title= 'ตกลง'
             color= '#000'
-            fontWeight = 'bold'
+            fontFamily= 'cloud-bold'
+            fontSize = {22}
             buttonStyle={{
                 borderRadius: 30,
                 backgroundColor: '#A5D6A7',
@@ -115,7 +116,7 @@ const styles = StyleSheet.create({
     TitleText: {
         color: '#455A64',
         textAlign: 'center',
-        fontSize: 25,
+        fontSize: 30,
         fontFamily: 'cloud-bold'
     },
     track: {

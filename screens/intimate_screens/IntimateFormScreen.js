@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
     SelfText: {
         color: '#455A64',
         textAlign: 'center',
-        fontSize: 20,
+        fontSize: 30,
         fontFamily: 'cloud-light'
     },
     radioBt: {

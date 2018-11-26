@@ -20,9 +20,9 @@ export class ArticleHomeScreen extends Component {
             backgroundColor='#03A9F4'
             buttonStyle={{borderRadius: 30, backgroundColor: '#A5D6A7', marginLeft: 50, marginRight: 50, marginBottom: 0}}
             title='ตกลง'
-            titleStyle={{ fontSize: "50", alignContent: 'center', justifyContent: 'center', alignItems: 'center', }}
+            fontSize = {22}
             color='#000'
-            fontWeight = 'bold'
+            fontFamily='cloud-bold'
           />
         </Card>
       </View>

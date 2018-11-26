@@ -45,8 +45,8 @@ class AddPhonenumber extends Component {
                 medium
                 onPress= {()=> Alert.alert('save phone number!')}
                 title= 'ตกลง'
-                fontSize= {20}
-                fontWeight= 'bold'
+                fontSize= {22}
+                fontFamily= 'cloud-bold'
                 color= '#000'
                 buttonStyle={{
                     backgroundColor: '#A5D6A7',
@@ -58,8 +58,8 @@ class AddPhonenumber extends Component {
                 medium
                 onPress= {()=> this.props.navigation.navigate('PhoneBook')}
                 title= 'ยกเลิก'
-                fontSize= {20}
-                fontWeight= 'bold'
+                fontSize= {22}
+                fontFamily= 'cloud-bold'
                 color= '#000'
                 buttonStyle={{
                     backgroundColor: '#F96565',
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
         marginTop: 50,
         color: '#455A64',
         textAlign: 'center',
-        fontSize: 25,
+        fontSize: 30,
         fontFamily: 'cloud-bold',
     }
 });

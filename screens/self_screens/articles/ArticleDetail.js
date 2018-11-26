@@ -77,7 +77,8 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between'
     },
     TextTitle: {
-        fontSize: 25,
+        fontSize: 22,
+        fontFamily: 'cloud-bold',
         marginLeft: 30,
     }
 });

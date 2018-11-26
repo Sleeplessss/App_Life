@@ -22,8 +22,8 @@ class PhoneBook extends Component {
           large
           title= 'รายชื่อ'
           color= '#000'
-          fontWeight= 'bold'
-          fontSize={25}
+          fontFamily= 'cloud-bold'
+          fontSize={30}
           iconRight= {{
           size:25,
           name:'plus-circle',
