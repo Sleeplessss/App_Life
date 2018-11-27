@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Platform } from 'react-native';
 import { View, 
   Image,
   StyleSheet,
@@ -6,8 +7,8 @@ import { View,
   AsyncStorage
  } from 'react-native';
  import { Avatar } from 'react-native-elements';
-import { createStackNavigator } from 'react-navigation';
-
+import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import TabBarIcon from '../../components/TabBarIcon';
 // Screens
 import ArticleHome from '../self_screens/articles/ArticleHomeScreen';
 import ArticleDetail from '../self_screens/articles/ArticleDetail';
@@ -26,15 +27,26 @@ import AddPhonenumber from '../self_screens/people/AddPhonenumber';
 import ScreeningMain from '../self_screens/screening/ScreeningMain';
 import StartScreening from '../self_screens/screening/StartScreening';
 
-
 class Main extends Component {
+  static navigationOptions = {
+    headerTitle: (
+        <View style={{ flex: 1, marginBottom: 10 , overflow: 'hidden' }}>
+            {/* <Image
+                style={{ flex: 1, height: 15, width: 300, alignSelf: 'center' }}
+                source={require('../../assets/images/header-life.png')}
+                resizeMode="contain"
+            /> */}
+        </View>
+    ),
+    headerTintColor: '#ffffff',
+    headerStyle: { backgroundColor: '#90CAF9' },
+    headerRight: <View />
+};
+
   constructor(props) {
     super(props);
     // this.handleArticle = this.handleArticle.bind(this);
   }
-  static navigationOptions = ({
-    header : null,
-});
 
   handleScreening = async () => {
     let age = await AsyncStorage.getItem('age')
@@ -181,7 +193,7 @@ const styles = StyleSheet.create({
   }
 });
 
-export default createStackNavigator({ 
+export default createStackNavigator({
   Main, 
   ArticleHome, 
   ArticleDetail, 

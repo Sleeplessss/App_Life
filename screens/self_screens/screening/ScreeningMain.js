@@ -2,6 +2,20 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image, ToastAndroid, AsyncStorage, TouchableOpacity } from 'react-native';
 
 class ScreeningMain extends Component {
+    static navigationOptions = {
+        headerTitle: (
+            <View style={{ flex: 1, marginBottom: 10 , overflow: 'hidden' }}>
+                {/* <Image
+                    style={{ flex: 1, height: 15, width: 300, alignSelf: 'center' }}
+                    source={require('../../assets/images/header-life.png')}
+                    resizeMode="contain"
+                /> */}
+            </View>
+        ),
+        headerTintColor: '#ffffff',
+        headerStyle: { backgroundColor: '#90CAF9' },
+        headerRight: <View />
+    };
   constructor(props) {
     super(props);
     this.handleonPress = this.handleonPress.bind(this);

@@ -2,9 +2,20 @@ import React, { Component } from 'react'
 import { Text, View, StyleSheet, Image } from 'react-native'
 import { Card, ListItem, Button, Icon } from 'react-native-elements'
 export class ArticleHomeScreen extends Component {
-  static navigationOptions = ({
-    header : null,
-});
+  static navigationOptions = {
+    headerTitle: (
+        <View style={{ flex: 1, marginBottom: 10 , overflow: 'hidden' }}>
+            {/* <Image
+                style={{ flex: 1, height: 15, width: 300, alignSelf: 'center' }}
+                source={require('../../assets/images/header-life.png')}
+                resizeMode="contain"
+            /> */}
+        </View>
+    ),
+    headerTintColor: '#ffffff',
+    headerStyle: { backgroundColor: '#90CAF9' },
+    headerRight: <View />
+};
   render() {
     return (
       <View style={styles.container}>

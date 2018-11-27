@@ -16,9 +16,22 @@ import Communications from 'react-native-communications';
 import OfflineScreen from './OfflineScreen';
 
 class VideosScreen extends React.Component {
+
   static navigationOptions = {
     title: 'วิดีโอ',
-  };
+    headerTitle: (
+        <View style={{ flex: 1, marginBottom: 10 , overflow: 'hidden' }}>
+            {/* <Image
+                style={{ flex: 1, height: 15, width: 300, alignSelf: 'center' }}
+                source={require('../../assets/images/header-life.png')}
+                resizeMode="contain"
+            /> */}
+        </View>
+    ),
+    headerTintColor: '#ffffff',
+    headerStyle: { backgroundColor: '#90CAF9' },
+    headerRight: <View />
+};
 
   render() {
     return (

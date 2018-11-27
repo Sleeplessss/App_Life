@@ -3,6 +3,20 @@ import { View, Text, StyleSheet, TextInput, Alert } from 'react-native';
 import { Button } from 'react-native-elements';
 
 class AddPhonenumber extends Component {
+    static navigationOptions = {
+        headerTitle: (
+            <View style={{ flex: 1, marginBottom: 10 , overflow: 'hidden' }}>
+                {/* <Image
+                    style={{ flex: 1, height: 15, width: 300, alignSelf: 'center' }}
+                    source={require('../../assets/images/header-life.png')}
+                    resizeMode="contain"
+                /> */}
+            </View>
+        ),
+        headerTintColor: '#ffffff',
+        headerStyle: { backgroundColor: '#90CAF9' },
+        headerRight: <View />
+    };
   constructor(props) {
     super(props);
     this.state = {
@@ -12,9 +26,6 @@ class AddPhonenumber extends Component {
       name: '',
       tel: ''
   }
-  static navigationOptions = ({
-    header : null,
-});
   render() {
     return (
       <View style={styles.container}>

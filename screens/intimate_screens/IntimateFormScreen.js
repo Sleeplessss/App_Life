@@ -121,12 +121,12 @@ export default class IntimateFormScreen extends Component {
                             กรุณากรอกอายุ
                     {'\n'}
                             และเลือกเพศของคุณ
-                    {'\n'}{'\n'}
+                    {'\n'}
                         </Text>
                     </View>
                     <View style={{ flex: 1 }}>
                         <TextInput
-                            style={{ height: 60, borderColor: 'gray', borderWidth: 2, width: 180, fontFamily: 'cloud-bold', justifyContent: 'center' }}
+                            style={{ height: 60, borderColor: 'gray', borderWidth: 2, width: 180, fontFamily: 'cloud-light', justifyContent: 'center' }}
                             placeholder="กรอกอายุ"
                             keyboardType='numeric'
                             maxLength={2}
@@ -145,10 +145,9 @@ export default class IntimateFormScreen extends Component {
                             large
                             onPress={this.handleSubmit}
                             title='ตกลง'
-                            fontSize= {22}
-                            fontFamily='cloud-bold'
+                            fontFamily='cloud-light'
                             color='#000'
-                            buttonStyle={{ backgroundColor: '#A5D6A7', borderRadius: 30, width: 130, marginBottom: 25 }}
+                            buttonStyle={{ backgroundColor: '#A5D6A7', borderRadius: 30, width: 130 }}
                         />
                     </View>
                 </View>
@@ -168,8 +167,8 @@ const styles = StyleSheet.create({
     SelfText: {
         color: '#455A64',
         textAlign: 'center',
-        fontSize: 30,
-        fontFamily: 'cloud-bold'
+        fontSize: 20,
+        fontFamily: 'cloud-light'
     },
     radioBt: {
         flex: 3,

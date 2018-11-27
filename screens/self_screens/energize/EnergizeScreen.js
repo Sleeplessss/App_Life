@@ -3,15 +3,28 @@ import { View, Text, StyleSheet, Alert, Slider, AsyncStorage } from 'react-nativ
 import { Button } from 'react-native-elements'
 
 class EnergizeScreen extends Component {
+
+    static navigationOptions = {
+        headerTitle: (
+            <View style={{ flex: 1, marginBottom: 10 , overflow: 'hidden' }}>
+                {/* <Image
+                    style={{ flex: 1, height: 15, width: 300, alignSelf: 'center' }}
+                    source={require('../../assets/images/header-life.png')}
+                    resizeMode="contain"
+                /> */}
+            </View>
+        ),
+        headerTintColor: '#ffffff',
+        headerStyle: { backgroundColor: '#90CAF9' },
+        headerRight: <View />
+    };
+
   constructor(props) {
     super(props);
     this.state = {
         value: 5,
       };
   }
-  static navigationOptions = ({
-    header : null,
-});
 
   change(value) {
     this.setState(() => {

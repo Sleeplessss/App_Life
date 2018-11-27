@@ -4,7 +4,7 @@ import { AppLoading, Asset, Font, Icon } from 'expo';
 import * as firebase from 'firebase';
 import AppNavigator from './navigation/AppNavigator';
 import TermScreen from './screens/registers/TermScreen';
-import SelfMain from './screens/self_screens/Main';
+import SelfNavigator from './screens/self_screens/SelfNavigator';
 import Main from './screens/intimate_screens/Main';
 
 export default class App extends React.Component {
