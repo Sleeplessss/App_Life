@@ -15,32 +15,32 @@ class ArticleDetail extends Component {
     return (
       <View style={styles.container}>
 
-        <TouchableOpacity  style={styles.Txt1} onPress={()=>Alert.alert('test')}>
+        <TouchableOpacity  style={styles.Txt1} onPress={()=>this.props.navigation.navigate('Cause')}>
             <Text style={styles.TextTitle} onPress={()=>Alert.alert('test')}>เหตุผลของการทำร้ายตนเอง &ensp;</Text>
             <Icon size={30} type='font-awesome' name='chevron-right'/>
         </TouchableOpacity >
 
-        <TouchableOpacity style={styles.Txt2} onPress={()=>Alert.alert('test')}>
+        <TouchableOpacity style={styles.Txt2} onPress={()=>this.props.navigation.navigate('Sorrowful')}>
             <Text style={styles.TextTitle}>ลักษณะความทุกข์ใจที่พบ</Text>
             <Icon size={30} type='font-awesome' name='chevron-right'/>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.Txt1} onPress={()=>Alert.alert('test')}>
-            <Text style={styles.TextTitle}>กลุ่มโรคที่มีความเสี่ยงต่อการ{'\n'}ต่อการทำร้ายตนเอง &ensp;</Text>
+        <TouchableOpacity style={styles.Txt1} onPress={()=>this.props.navigation.navigate('Risk')}>
+            <Text style={styles.TextTitle}>กลุ่มโรคที่มีความเสี่ยงต่อการ{'\n'}ทำร้ายตนเอง &ensp;</Text>
             <Icon size={30} type='font-awesome' name='chevron-right'/>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.Txt2} onPress={()=>Alert.alert('test')}>
+        <TouchableOpacity style={styles.Txt2} onPress={()=>this.props.navigation.navigate('Alarms')}>
             <Text style={styles.TextTitle}>สัญญาณเตือน</Text>
             <Icon size={30} type='font-awesome' name='chevron-right'/>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.Txt1} onPress={()=>Alert.alert('test')}>
-            <Text style={styles.TextTitle}>พฤติกรรมที่ชัดเจนของ{'\n'}การทำร้ายตนเอง &ensp;</Text>
+        <TouchableOpacity style={styles.Txt1} onPress={()=>this.props.navigation.navigate('Behavior')}>
+            <Text style={styles.TextTitle}>พฤติกรรมที่ชัดเจนของการลงมือ{'\n'}ทำร้ายตนเอง &ensp;</Text>
             <Icon size={30} type='font-awesome' name='chevron-right'/>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.Txt2} onPress={()=>Alert.alert('test')}>
+        <TouchableOpacity style={styles.Txt2} onPress={()=>this.props.navigation.navigate('Suicide')}>
             <Text style={styles.TextTitle}>ฆ่าตัวตายป้องกันได้ &ensp;</Text>
             <Icon size={30} type='font-awesome' name='chevron-right'/>
         </TouchableOpacity>

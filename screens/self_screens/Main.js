@@ -11,11 +11,21 @@ import { createStackNavigator } from 'react-navigation';
 // Screens
 import ArticleHome from '../self_screens/articles/ArticleHomeScreen';
 import ArticleDetail from '../self_screens/articles/ArticleDetail';
+import Alarms from '../self_screens/articles/AlarmsScreen';
+import Behavior from '../self_screens/articles/BehaviorScreen';
+import Cause from '../self_screens/articles/CauseScreen';
+import Risk from '../self_screens/articles/RiskScreen';
+import Sorrowful from '../self_screens/articles/SorrowfulScreen';
+import Suicide from '../self_screens/articles/SuicideScreen';
+
 import EnergizeScreen from '../self_screens/energize/EnergizeScreen';
+import EnergizeResul from './energize/ResultScreen';
+
 import PhoneBook from '../self_screens/people/PhoneBook';
 import AddPhonenumber from '../self_screens/people/AddPhonenumber';
 import ScreeningMain from '../self_screens/screening/ScreeningMain';
 import StartScreening from '../self_screens/screening/StartScreening';
+
 
 class Main extends Component {
   constructor(props) {
@@ -171,4 +181,20 @@ const styles = StyleSheet.create({
   }
 });
 
-export default createStackNavigator({ Main, ArticleHome, ArticleDetail, EnergizeScreen, PhoneBook, AddPhonenumber, ScreeningMain, StartScreening },{ headerMode : null });
+export default createStackNavigator({ 
+  Main, 
+  ArticleHome, 
+  ArticleDetail, 
+  Alarms,
+  Behavior,
+  Cause,
+  Risk,
+  Sorrowful,
+  Suicide,
+  EnergizeScreen, 
+  EnergizeResul,
+  PhoneBook, 
+  AddPhonenumber, 
+  ScreeningMain, 
+  StartScreening,  
+},{ headerMode : null });

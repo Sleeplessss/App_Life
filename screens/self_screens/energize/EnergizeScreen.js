@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Alert, Slider } from 'react-native';
+import { View, Text, StyleSheet, Alert, Slider, AsyncStorage } from 'react-native';
 import { Button } from 'react-native-elements'
 
 class EnergizeScreen extends Component {
@@ -22,7 +22,8 @@ class EnergizeScreen extends Component {
   }
   getVal(val){
     console.log(val);
-    }  
+    AsyncStorage.setItem('point', val)
+    }
 
   render() {
     return (
@@ -51,7 +52,7 @@ class EnergizeScreen extends Component {
 
         <View style={styles.Btn}>
             <Button
-            onPress={()=>Alert.alert('test')}
+            onPress={()=>this.props.navigation.navigate('EnergizeResul')}
             title= 'ตกลง'
             color= '#000'
             fontFamily= 'cloud-bold'
