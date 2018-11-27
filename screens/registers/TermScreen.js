@@ -11,8 +11,8 @@ import { createStackNavigator } from 'react-navigation';
 import UserScreen from './UserScreen';
 import SelfFormScreen from '../self_screens/SelfFormScreen';
 import IntimateFormScreen from '../intimate_screens/IntimateFormScreen';
-import SelfMain from '../self_screens/Main';
-//import SelfMain from '../self_screens//SelfNavigator';
+//import SelfMain from '../self_screens/Main';
+import SelfMain from '../self_screens//SelfNavigator';
 import IntimateMain from '../intimate_screens/Main';
 
 class TermScreen extends Component {
@@ -111,9 +111,9 @@ export default createStackNavigator({
     SelfMain,
     IntimateMain
 },
-    {
-        headerMode: "none",
-        style: {
-            backgroundColor: '#eee'
-        }
-    });
+{ 
+    // headerMode: 'none',
+    // style: { 
+    //     backgroundColor: '#eee'
+    // }
+});
