@@ -120,7 +120,7 @@ export default class SelfFormScreen extends Component {
                     </Text>
                     <View style={{ flex: 1, width: '65%' }}>
                         <TextInput
-                            style={{ height: 60, borderColor: 'gray', borderWidth: 2, fontFamily: 'cloud-light' }}
+                            style={{ height: 60, borderColor: 'gray', borderWidth: 2, fontFamily: 'cloud-bold' }}
                             placeholder="กรอกอายุ"
                             keyboardType='numeric'
                             maxLength={2}

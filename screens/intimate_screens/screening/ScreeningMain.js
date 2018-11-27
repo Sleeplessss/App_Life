@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
     TxtTitle: {
         color: '#455A64',
         textAlign: 'center',
-        fontSize: 25,
+        fontSize: 30,
         fontFamily: 'cloud-bold',
     },
     ImgScreening1: {

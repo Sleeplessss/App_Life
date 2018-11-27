@@ -13,6 +13,9 @@ import Relax from '../intimate_screens/relax/RelaxHome';
 import ScreeningMain from '../intimate_screens/screening/ScreeningMain';
 import VideoHome from '../intimate_screens/video/VideoHome';
 import StartScreening from '../intimate_screens/screening/StartScreening';
+import ComunicationScreen from '../intimate_screens/consolation/ComunicationScreen';
+import Suicide from '../intimate_screens/consolation/SuicideScreen';
+import StayAlert from '../intimate_screens/consolation/StayalertScreen';
 
 class Main extends Component {
   constructor(props) {
@@ -58,7 +61,7 @@ class Main extends Component {
           </Text>
           <Text 
             onPress={() => this.props.navigation.navigate('Relax')} 
-            style={{color: '#455A64',fontSize: 22,fontFamily: 'cloud-bold',marginLeft: 60}}>
+            style={{color: '#455A64',fontSize: 22,fontFamily: 'cloud-bold',marginLeft: 90}}>
             วิธีคลายเครียด
           </Text>
         </View>
@@ -92,7 +95,7 @@ class Main extends Component {
           </Text>
           <Text 
             onPress={() => this.props.navigation.navigate('ScreeningMain')} 
-            style={{color: '#455A64',fontSize: 22,fontFamily: 'cloud-bold',marginLeft: 20}}>
+            style={{color: '#455A64',fontSize: 22,fontFamily: 'cloud-bold',marginLeft: 60}}>
             แบบคัดกรอง
           </Text>
         </View>
@@ -153,4 +156,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default createStackNavigator({ Main, Consolation, Relax, ScreeningMain, VideoHome, StartScreening },{ headerMode : null });
+export default createStackNavigator({ Main, Consolation, Relax, ScreeningMain, VideoHome, StartScreening, ComunicationScreen, Suicide, StayAlert },{ headerMode : null });
