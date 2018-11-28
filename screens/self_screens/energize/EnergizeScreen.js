@@ -5,15 +5,9 @@ import { Button } from 'react-native-elements'
 class EnergizeScreen extends Component {
 
     static navigationOptions = {
-        headerTitle: (
-            <View style={{ flex: 1, marginBottom: 10 , overflow: 'hidden' }}>
-                {/* <Image
-                    style={{ flex: 1, height: 15, width: 300, alignSelf: 'center' }}
-                    source={require('../../assets/images/header-life.png')}
-                    resizeMode="contain"
-                /> */}
-            </View>
-        ),
+        headerTitle:<View style={{textAlign:'center'}}>
+                        <Text style={{fontSize: 30, fontFamily: 'cloud-bold', color: '#fff'}}>วัดระดับพลังใจ</Text>
+                    </View>,
         headerTintColor: '#ffffff',
         headerStyle: { backgroundColor: '#90CAF9' },
         headerRight: <View />
@@ -21,6 +15,7 @@ class EnergizeScreen extends Component {
 
   constructor(props) {
     super(props);
+    AsyncStorage.setItem('point', '5')
     this.state = {
         value: 5,
       };
@@ -34,10 +29,15 @@ class EnergizeScreen extends Component {
     });
   }
   getVal(val){
-    console.log(val);
-    AsyncStorage.setItem('point', val)
+    // console.log(val);
+    AsyncStorage.setItem('point', String(val))
     }
 
+  handleSubmit = async () => {
+      let point = await AsyncStorage.getItem('point');
+    //   console.log('point = ' + point);
+      return this.props.navigation.navigate('EnergizeResul')
+  }  
   render() {
     return (
       <View style={styles.container}>
@@ -52,6 +52,7 @@ class EnergizeScreen extends Component {
         <View style={styles.SliderStyle}>
             <Slider
                 style={{width:250}}
+                thumbImage={require('../../../assets/images/cardiogram.png')}
                 trackStyle={styles.track}
                 thumbStyle={styles.thumb}
                 step={1}
@@ -65,7 +66,7 @@ class EnergizeScreen extends Component {
 
         <View style={styles.Btn}>
             <Button
-            onPress={()=>this.props.navigation.navigate('EnergizeResul')}
+            onPress={this.handleSubmit}
             title= 'ตกลง'
             color= '#000'
             fontFamily= 'cloud-bold'

@@ -47,7 +47,6 @@ class Main extends Component {
     super(props);
     // this.handleArticle = this.handleArticle.bind(this);
   }
-
   handleScreening = async () => {
     let age = await AsyncStorage.getItem('age')
     console.log(age);

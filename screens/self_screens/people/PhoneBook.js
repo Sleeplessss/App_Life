@@ -5,15 +5,9 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 class PhoneBook extends Component {
   static navigationOptions = {
-    headerTitle: (
-        <View style={{ flex: 1, marginBottom: 10 , overflow: 'hidden' }}>
-            {/* <Image
-                style={{ flex: 1, height: 15, width: 300, alignSelf: 'center' }}
-                source={require('../../assets/images/header-life.png')}
-                resizeMode="contain"
-            /> */}
-        </View>
-    ),
+    headerTitle:<View style={{textAlign:'center'}}>
+                        <Text style={{fontSize: 30, fontFamily: 'cloud-bold', color: '#fff'}}>ใครสักคนที่อยากคุย</Text>
+                    </View>,
     headerTintColor: '#ffffff',
     headerStyle: { backgroundColor: '#90CAF9' },
     headerRight: <View />

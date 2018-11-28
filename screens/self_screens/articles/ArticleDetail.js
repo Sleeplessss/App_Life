@@ -4,15 +4,9 @@ import { Button, Icon } from 'react-native-elements';
 
 class ArticleDetail extends Component {
     static navigationOptions = {
-        headerTitle: (
-            <View style={{ flex: 1, marginBottom: 10 , overflow: 'hidden' }}>
-                {/* <Image
-                    style={{ flex: 1, height: 15, width: 300, alignSelf: 'center' }}
-                    source={require('../../assets/images/header-life.png')}
-                    resizeMode="contain"
-                /> */}
-            </View>
-        ),
+        headerTitle:<View style={{textAlign:'center'}}>
+                        <Text style={{fontSize: 30, fontFamily: 'cloud-bold', color: '#fff'}}>ไขคำถาม...ไขข้อข้องใจ</Text>
+                    </View>,
         headerTintColor: '#ffffff',
         headerStyle: { backgroundColor: '#90CAF9' },
         headerRight: <View />
@@ -27,7 +21,7 @@ class ArticleDetail extends Component {
       <View style={styles.container}>
 
         <TouchableOpacity  style={styles.Txt1} onPress={()=>this.props.navigation.navigate('Cause')}>
-            <Text style={styles.TextTitle} onPress={()=>Alert.alert('test')}>เหตุผลของการทำร้ายตนเอง &ensp;</Text>
+            <Text style={styles.TextTitle}>เหตุผลของการทำร้ายตนเอง &ensp;</Text>
             <Icon size={30} type='font-awesome' name='chevron-right'/>
         </TouchableOpacity >
 

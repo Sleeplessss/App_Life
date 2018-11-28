@@ -39,7 +39,7 @@ export default class App extends React.Component {
         <View style={styles.container}>
           {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
           {/* <AppNavigator /> */}
-          <TermScreen/>
+          <SelfNavigator/>
         </View>
       );
     }
@@ -49,6 +49,7 @@ export default class App extends React.Component {
     return Promise.all([
       Asset.loadAsync([
         require('./assets/images/antique.png'),
+        require('./assets/images/cardiogram.png'),
         require('./assets/images/exercise.png'),
         require('./assets/images/family.png'),
         require('./assets/images/form.png'),
