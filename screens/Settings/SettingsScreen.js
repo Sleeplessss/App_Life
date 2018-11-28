@@ -16,16 +16,7 @@ import AboutScreen from './AboutScreen';
 class SettingsScreen extends React.Component {
 
   static navigationOptions = {
-    title: "ตั้งค่า",
-    headerTitle: (
-        <View style={{ flex: 1, marginBottom: 10 , overflow: 'hidden' }}>
-            {/* <Image
-                style={{ flex: 1, height: 15, width: 300, alignSelf: 'center' }}
-                source={require('../../assets/images/header-life.png')}
-                resizeMode="contain"
-            /> */}
-        </View>
-    ),
+    headerTitle: "ตั้งค่า",
     headerTintColor: '#ffffff',
     headerStyle: { backgroundColor: '#90CAF9' },
     headerRight: <View />

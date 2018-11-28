@@ -22,9 +22,21 @@ class Main extends Component {
     super(props);
     // this.handleArticle = this.handleArticle.bind(this);
   }
-  static navigationOptions = ({
-    header : null,
-});
+  static navigationOptions = {
+    headerTitle: (
+        <View style={{ flex: 1, marginBottom: 10 , overflow: 'hidden' }}>
+             <Image
+                style={{ flex: 1, height: 15, width: 300, alignSelf: 'center' }}
+                source={require('../../assets/images/header-life.png')}
+                resizeMode="contain"
+            /> 
+        </View>
+    ),
+    headerTintColor: '#ffffff',
+    headerStyle: { backgroundColor: '#90CAF9' },
+    headerRight: <View />,
+    headerLeft: <View />
+};
   render() {
     return (
       <View style={styles.container}>

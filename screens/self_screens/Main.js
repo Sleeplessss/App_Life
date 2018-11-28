@@ -31,16 +31,17 @@ class Main extends Component {
   static navigationOptions = {
     headerTitle: (
         <View style={{ flex: 1, marginBottom: 10 , overflow: 'hidden' }}>
-            {/* <Image
+             <Image
                 style={{ flex: 1, height: 15, width: 300, alignSelf: 'center' }}
                 source={require('../../assets/images/header-life.png')}
                 resizeMode="contain"
-            /> */}
+            /> 
         </View>
     ),
     headerTintColor: '#ffffff',
     headerStyle: { backgroundColor: '#90CAF9' },
-    headerRight: <View />
+    headerRight: <View />,
+    headerLeft: <View />
 };
 
   constructor(props) {
@@ -208,4 +209,4 @@ export default createStackNavigator({
   AddPhonenumber, 
   ScreeningMain, 
   StartScreening,  
-},{ headerMode : null });
+},{ headerMode : 'none' });
