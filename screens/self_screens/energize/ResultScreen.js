@@ -6,7 +6,7 @@ class EnergizeResultScreen extends Component {
 
   static navigationOptions = {
     headerTitle:<View style={{textAlign:'center'}}>
-                        <Text style={{fontSize: 30, fontFamily: 'cloud-bold', color: '#fff'}}>ดับพลังใจ</Text>
+                        <Text style={{fontSize: 30, fontFamily: 'cloud-bold', color: '#fff'}}>ระดับพลังใจ</Text>
                     </View>,
     headerTintColor: '#ffffff',
     headerStyle: { backgroundColor: '#90CAF9' },

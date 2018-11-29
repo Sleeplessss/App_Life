@@ -40,7 +40,7 @@ class Main extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.TextMain}> สำหรับผู้ใกล้ชิด {'\n'}{'\n'}</Text>
+        <Text style={styles.TextMain}> สำหรับผู้ใกล้ชิด </Text>
 
         <View style={styles.AvartarMain1}>
           <Avatar

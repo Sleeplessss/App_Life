@@ -21,21 +21,6 @@ import RadioGroup from 'react-native-radio-buttons-group';
 
 export default class SelfFormScreen extends Component {
 
-    static navigationOptions = {
-        headerTitle: (
-            <View style={{ flex: 1, marginBottom: 10 , overflow: 'hidden' }}>
-                <Image
-                    style={{ flex: 1, height: 15, width: 300, alignSelf: 'center' }}
-                    source={require('../../assets/images/header-life.png')}
-                    resizeMode="contain"
-                />
-            </View>
-        ),
-        headerTintColor: '#ffffff',
-        headerStyle: { backgroundColor: '#90CAF9' },
-        headerRight: <View />
-    };
-
     constructor(props) {
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -112,26 +97,33 @@ export default class SelfFormScreen extends Component {
         return (
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                 <View style={styles.container}>
-                <Header
-                    leftComponent={ <Icon name='arrow-back'  color= '#fff' onPress={()=>this.props.navigation.navigate('UserScreen')} /> }
-                    centerComponent={<View style={{ flex: 1, overflow: 'hidden' }}>
-                        <Image
-                        style={{ flex: 1, height: 30, width: 300, alignSelf: 'center' }}
-                        source={require('../../assets/images/header-life.png')}
-                        resizeMode="contain"
-                        /> 
-                    </View>}
-                    
-                    backgroundColor= '#90CAF9'
-                
-                />
+                    <Header
+                        leftComponent={
+                            <Icon
+                                name='arrow-back'
+                                color='#fff'
+                                onPress={() => this.props.navigation.navigate('UserScreen')}
+                            />
+                        }
+                        centerComponent={
+                            <View style={{ flex: 1 }}>
+                                <Image
+                                    style={{ flex: 1, height: 30, width: 150 }}
+                                    source={require('../../assets/images/header-life.png')}
+                                    resizeMode="contain"
+                                />
+                            </View>}
+
+                        backgroundColor='#90CAF9'
+                    />
+
                     <Text style={styles.SelfText}>
                         กรุณากรอกอายุ
                 {'\n'}
                         และเลือกเพศของคุณ
-                {'\n'}{'\n'}
+                        {'\n'}
                     </Text>
-                    <View style={{ flex: 1, width: '65%' }}>
+                    <View style={{ flex: 1, width: '65%', alignSelf : 'center' }}>
                         <TextInput
                             style={{ height: 60, borderColor: 'gray', borderWidth: 2, fontFamily: 'cloud-bold' }}
                             placeholder="กรอกอายุ"
@@ -169,8 +161,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
     },
     SelfText: {
         marginTop: 80,

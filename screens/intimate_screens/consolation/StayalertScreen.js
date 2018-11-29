@@ -8,9 +8,14 @@ export class StayalertScreen extends Component {
         this.state = {
         };
       }
-      static navigationOptions = ({
-        header : null,
-    });
+      static navigationOptions = {
+        headerTitle:<View style={{textAlign:'center'}}>
+                        <Text style={{fontSize: 30, fontFamily: 'cloud-bold', color: '#fff'}}>การเฝ้าระวัง/ดูแล</Text>
+                    </View>,
+        headerTintColor: '#ffffff',
+        headerStyle: { backgroundColor: '#90CAF9' },
+        headerRight: <View />
+    };
   render() {
     return (
         <View style={styles.container}>

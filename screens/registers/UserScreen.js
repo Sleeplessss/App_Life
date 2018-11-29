@@ -9,42 +9,35 @@ import { Button, Header, Icon } from 'react-native-elements';
 
 export default class UserScreen extends Component {
 
-    static navigationOptions = {
-        headerTitle: (
-            <View style={{ flex: 1, marginBottom: 10 , overflow: 'hidden' }}>
-                <Image
-                    style={{ flex: 1, height: 15, width: 300, alignSelf: 'center' }}
-                    source={require('../../assets/images/header-life.png')}
-                    resizeMode="contain"
-                />
-            </View>
-        ),
-        headerTintColor: '#ffffff',
-        headerStyle: { backgroundColor: '#90CAF9' },
-        headerRight: <View />
-    };
-
     render() {
         return (
             <View style={styles.container}>
-            <Header
-                leftComponent={ <Icon name='arrow-back'  color= '#fff' onPress={()=>this.props.navigation.navigate('TermScreen')} /> }
-                centerComponent={<View style={{ flex: 1, overflow: 'hidden' }}>
-                <Image
-                   style={{ flex: 1, height: 30, width: 300, alignSelf: 'center' }}
-                   source={require('../../assets/images/header-life.png')}
-                   resizeMode="contain"
-               /> 
-           </View>}
-                
-                backgroundColor= '#90CAF9'
-                
-            />
-            <View style={{alignItems: 'center'}}>
+                <Header
+                    leftComponent={
+                        <Icon
+                            name='arrow-back'
+                            color='#fff'
+                            onPress={() => this.props.navigation.navigate('TermScreen')}
+                        />
+                    }
+                    centerComponent={
+                        <View style={{ flex: 1 }}>
+                            <Image
+                                style={{ flex: 1, height: 30, width: 150 }}
+                                source={require('../../assets/images/header-life.png')}
+                                resizeMode="contain"
+                            />
+                        </View>}
+
+                    backgroundColor='#90CAF9'
+                />
+                <View style={{ flex: 1 }}>
                 <Text style={styles.UserText}>
                     กรุณาเลือกกลุ่มผู้ใช้งาน
-                    {'\n'}{'\n'}
+                    
                 </Text>
+                </View>
+                <View style={{ flex: 2,alignItems: 'center',justifyContent: 'center' }}>
                 <Button
                     large
                     onPress={() => this.props.navigation.navigate('SelfFormScreen')}
@@ -76,14 +69,14 @@ export default class UserScreen extends Component {
                         }
                     }
                 />
-                <Text>{'\n'}</Text>
+                </View>
+                <View style={{ flex: 2 }}>
                 <Image
                     source={require('../../assets/images/family.png')}
-                    style={{ height: 300, width: 250 }}
+                    style={{ flex:1, height: undefined, width: undefined}}
                     resizeMode="contain"
                 />
-            </View>
-
+                </View>
             </View>
         )
     }
@@ -93,7 +86,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
-        // alignItems: 'center',
+        //alignItems: 'center',
         flexDirection: 'column',
         justifyContent: 'space-between',
         // justifyContent: 'center',

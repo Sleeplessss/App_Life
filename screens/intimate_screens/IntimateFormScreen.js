@@ -116,18 +116,24 @@ export default class IntimateFormScreen extends Component {
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                 <View style={styles.container}>
                 <Header
-                    leftComponent={ <Icon name='arrow-back'  color= '#fff' onPress={()=>this.props.navigation.navigate('UserScreen')} /> }
-                    centerComponent={<View style={{ flex: 1, overflow: 'hidden' }}>
-                        <Image
-                        style={{ flex: 1, height: 30, width: 300, alignSelf: 'center' }}
-                        source={require('../../assets/images/header-life.png')}
-                        resizeMode="contain"
-                        /> 
-                    </View>}
-                    
-                    backgroundColor= '#90CAF9'
-                
-                />
+                        leftComponent={
+                            <Icon
+                                name='arrow-back'
+                                color='#fff'
+                                onPress={() => this.props.navigation.navigate('UserScreen')}
+                            />
+                        }
+                        centerComponent={
+                            <View style={{ flex: 1 }}>
+                                <Image
+                                    style={{ flex: 1, height: 30, width: 150 }}
+                                    source={require('../../assets/images/header-life.png')}
+                                    resizeMode="contain"
+                                />
+                            </View>}
+
+                        backgroundColor='#90CAF9'
+                    />
                     <View style={{ flex: 1, justifyContent: 'center' }}>
                         <Text style={styles.SelfText}>
                             {'\n'}
@@ -139,7 +145,7 @@ export default class IntimateFormScreen extends Component {
                     </View>
                     <View style={{ flex: 1 }}>
                         <TextInput
-                            style={{ height: 60, borderColor: 'gray', borderWidth: 2, width: 180, fontFamily: 'cloud-light', justifyContent: 'center' }}
+                            style={{ height: 60, borderColor: 'gray', borderWidth: 2, width: 180, fontFamily: 'cloud-light',alignSelf: 'center', justifyContent: 'center' }}
                             placeholder="กรอกอายุ"
                             keyboardType='numeric'
                             maxLength={2}
@@ -175,7 +181,6 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
         flexDirection: 'column',
-        alignItems: 'center',
         justifyContent: 'center',
     },
     SelfText: {

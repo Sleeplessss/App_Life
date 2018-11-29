@@ -62,7 +62,7 @@ class Main extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.TextMain}> สำหรับตัวท่านเอง {'\n'}{'\n'}</Text>
+        <Text style={styles.TextMain}> สำหรับตัวท่านเอง </Text>
 
         <View style={styles.AvartarMain1}>
           <Avatar
