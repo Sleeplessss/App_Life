@@ -213,4 +213,7 @@ export default createStackNavigator({
   StartScreening, 
   High,
   Low
-},{ headerMode : 'none' });
+},
+{ 
+  // headerMode : 'none' 
+});

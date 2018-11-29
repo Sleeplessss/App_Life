@@ -39,10 +39,10 @@ export default class App extends React.Component {
         <View style={styles.container}>
           {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
           {/*รันจากหน้ากรอกรายละเอียด*/}
-          {/* <TermScreen/> */}
+          <TermScreen/>
 
           {/*รันจากหน้าหลักกของ ตนเอง*/}
-          <SelfNavigator/>
+          {/* <SelfNavigator/> */}
 
           {/*ันจากหน้าหลักของ ผู้ใกล้ชิด*/}
           {/* <Main/> */}

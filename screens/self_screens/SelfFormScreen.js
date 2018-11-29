@@ -16,7 +16,7 @@ import {
     StackActions,
     NavigationActions,
 } from 'react-navigation';
-import { Button } from 'react-native-elements';
+import { Button, Header, Icon } from 'react-native-elements';
 import RadioGroup from 'react-native-radio-buttons-group';
 
 export default class SelfFormScreen extends Component {
@@ -112,6 +112,19 @@ export default class SelfFormScreen extends Component {
         return (
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                 <View style={styles.container}>
+                <Header
+                    leftComponent={ <Icon name='arrow-back'  color= '#fff' onPress={()=>this.props.navigation.navigate('UserScreen')} /> }
+                    centerComponent={<View style={{ flex: 1, overflow: 'hidden' }}>
+                        <Image
+                        style={{ flex: 1, height: 30, width: 300, alignSelf: 'center' }}
+                        source={require('../../assets/images/header-life.png')}
+                        resizeMode="contain"
+                        /> 
+                    </View>}
+                    
+                    backgroundColor= '#90CAF9'
+                
+                />
                     <Text style={styles.SelfText}>
                         กรุณากรอกอายุ
                 {'\n'}

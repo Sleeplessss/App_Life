@@ -5,7 +5,7 @@ import {
     Text,
     View,
 } from 'react-native';
-import { Button } from 'react-native-elements';
+import { Button, Header, Icon } from 'react-native-elements';
 
 export default class UserScreen extends Component {
 
@@ -27,51 +27,62 @@ export default class UserScreen extends Component {
     render() {
         return (
             <View style={styles.container}>
+            <Header
+                leftComponent={ <Icon name='arrow-back'  color= '#fff' onPress={()=>this.props.navigation.navigate('TermScreen')} /> }
+                centerComponent={<View style={{ flex: 1, overflow: 'hidden' }}>
+                <Image
+                   style={{ flex: 1, height: 30, width: 300, alignSelf: 'center' }}
+                   source={require('../../assets/images/header-life.png')}
+                   resizeMode="contain"
+               /> 
+           </View>}
+                
+                backgroundColor= '#90CAF9'
+                
+            />
+            <View style={{alignItems: 'center'}}>
                 <Text style={styles.UserText}>
                     กรุณาเลือกกลุ่มผู้ใช้งาน
                     {'\n'}{'\n'}
                 </Text>
-
-                <View>
-                    <Button
-                        large
-                        onPress={() => this.props.navigation.navigate('SelfFormScreen')}
-                        title='ตัวท่านเอง'
-                        fontSize={22}
-                        fontFamily='cloud-bold'
-                        color='#455A64'
-                        buttonStyle={
-                            {
-                                backgroundColor: '#FFECB3',
-                                width: 130,
-                                borderRadius: 30,
-                            }
+                <Button
+                    large
+                    onPress={() => this.props.navigation.navigate('SelfFormScreen')}
+                    title='ตัวท่านเอง'
+                    fontSize={22}
+                    fontFamily='cloud-bold'
+                    color='#455A64'
+                    buttonStyle={
+                        {
+                            backgroundColor: '#FFECB3',
+                            width: 130,
+                            borderRadius: 30,
                         }
-                    />
-                    <Text>{'\n'}</Text>
-                    <Button
-                        large
-                        onPress={() => this.props.navigation.navigate('IntimateFormScreen')}
-                        title='ผู้ใกล้ชิด'
-                        fontSize={22}
-                        fontFamily='cloud-bold'
-                        color='#455A64'
-                        buttonStyle={
-                            {
-                                backgroundColor: '#FFD54F',
-                                width: 130,
-                                borderRadius: 30,
-                            }
+                    }
+                />
+                <Text>{'\n'}</Text>
+                <Button
+                    large
+                    onPress={() => this.props.navigation.navigate('IntimateFormScreen')}
+                    title='ผู้ใกล้ชิด'
+                    fontSize={22}
+                    fontFamily='cloud-bold'
+                    color='#455A64'
+                    buttonStyle={
+                        {
+                            backgroundColor: '#FFD54F',
+                            width: 130,
+                            borderRadius: 30,
                         }
-                    />
-                </View>
-
+                    }
+                />
                 <Text>{'\n'}</Text>
                 <Image
                     source={require('../../assets/images/family.png')}
-                    style={{ flex: 1, height: 300, width: 250 }}
+                    style={{ height: 300, width: 250 }}
                     resizeMode="contain"
                 />
+            </View>
 
             </View>
         )
@@ -82,7 +93,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
-        alignItems: 'center',
+        // alignItems: 'center',
         flexDirection: 'column',
         justifyContent: 'space-between',
         // justifyContent: 'center',

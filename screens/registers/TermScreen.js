@@ -111,7 +111,7 @@ export default createStackNavigator({
     SelfMain,
     IntimateMain
 },
-{ 
+{ headerMode: 'none'
     // style: { 
     //     backgroundColor: '#eee'
     // }
