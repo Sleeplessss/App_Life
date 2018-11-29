@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, AsyncStorage, StyleSheet, Image, Slider } from 'react-native';
+import { Button } from 'react-native-elements'
 
 class EnergizeResultScreen extends Component {
 
@@ -21,40 +22,144 @@ class EnergizeResultScreen extends Component {
   }
   componentWillMount(){
    AsyncStorage.getItem('point').then((value) => this.setState({ 'point': value }))
-   const d = AsyncStorage.getItem('point')
-   console.log('point = ' + d);
-   
-  //  this.setState({'value': parseInt(point)})
+   AsyncStorage.getItem('point').then((value) => this.setState({ 'value': parseInt(value) }))
   }
-  loadPoint = async () => {
-    // let point = await AsyncStorage.getItem('point')
-    this.setState({ 'point': await AsyncStorage.getItem('point') })
-    console.log(point);
+  handleSubmit(){
+    if (this.state.value >= 1 && this.state.value < 5){
+      return this.props.navigation.navigate('Low')
+    } else if (this.state.value >= 5) {
+      return this.props.navigation.navigate('High')
+    }
   }
   render() {
-    return (
-      <View style={styles.container}>
-        <View style={{flexDirection: 'row'}}>
-          <Text style={styles.txtStyle}>ระดับพลังใจของคุณ{'\n'}คือ {this.state.point} มาช่วยกัน {'\n'}เติมให้เต็มสิคะ</Text>
-          <Image
-              source={require('../../../assets/images/nurse.png')}
-              style={{ height: 130, width: 130 }}
-              resizeMode="contain"
-          />
+    // if (this.state.value >= 1 && this.state.value <= 4) {
+      return (
+        <View style={styles.container}>
+          <View style={styles.Mainbody}>
+            <Text style={styles.txtStyle}>ระดับพลังใจของคุณ{'\n'}คือ {this.state.point} มาช่วยกัน {'\n'}เติมให้เต็มสิคะ</Text>
+            <Image
+                source={require('../../../assets/images/nurse.png')}
+                style={{ height: 150, width: 150 }}
+                resizeMode="contain"
+            />
+          </View>
+          
+          <Text>{'\n'}</Text>
+          
+          <Slider
+                  disabled={true}
+                  style={{width:250}}
+                  trackStyle={styles.track}
+                  thumbStyle={styles.thumb}
+                  step={1}
+                  minimumValue={0}
+                  maximumValue={10}
+                  value={this.state.value}
+                  />
+  
+          <Text>{'\n'}</Text>
+  
+          <Button
+              onPress={this.handleSubmit}
+              title= 'ตกลง'
+              color= '#000'
+              fontFamily= 'cloud-bold'
+              fontSize = {22}
+              buttonStyle={{
+                  borderRadius: 30,
+                  backgroundColor: '#A5D6A7',
+                  width: 130,
+                  height: 50        
+              }}
+              />
         </View>
-        <Text>{'\n'}</Text>
-        <Slider
-                disabled={true}
-                style={{width:250}}
-                trackStyle={styles.track}
-                thumbStyle={styles.thumb}
-                step={1}
-                minimumValue={0}
-                maximumValue={10}
-                value={this.state.value}
-                />
-      </View>
-    );
+      );
+    // } else if (this.state.value >= 5 && this.state.value <= 9) {
+    //   return (
+    //     <View style={styles.container}>
+    //       <View style={styles.Mainbody}>
+    //         <Text style={styles.txtStyle}>สุดยอดเลย ระดับพลังใจ{'\n'}ของคุณคือ {this.state.point} มาช่วยกัน {'\n'}เติมให้เต็มสิคะ</Text>
+    //         <Image
+    //             source={require('../../../assets/images/nurse.png')}
+    //             style={{ height: 150, width: 150 }}
+    //             resizeMode="contain"
+    //         />
+    //       </View>
+          
+    //       <Text>{'\n'}</Text>
+          
+    //       <Slider
+    //               disabled={true}
+    //               style={{width:250}}
+    //               trackStyle={styles.track}
+    //               thumbStyle={styles.thumb}
+    //               step={1}
+    //               minimumValue={0}
+    //               maximumValue={10}
+    //               value={this.state.value}
+    //               />
+  
+    //       <Text>{'\n'}</Text>
+  
+    //       <Button
+    //           onPress={this.handleSubmit}
+    //           title= 'ตกลง'
+    //           color= '#000'
+    //           fontFamily= 'cloud-bold'
+    //           fontSize = {22}
+    //           buttonStyle={{
+    //               borderRadius: 30,
+    //               backgroundColor: '#A5D6A7',
+    //               width: 130,
+    //               height: 50        
+    //           }}
+    //           />
+    //     </View>
+    //   );
+    // } else if (this.state.value == 10) {
+    //   return (
+    //     <View style={styles.container}>
+    //       <View style={styles.Mainbody}>
+    //         <Text style={styles.txtStyle}>สุดยอดเลย ระดับพลังใจ{'\n'}ของคุณเต็ม {this.state.point}</Text>
+    //         <Image
+    //             source={require('../../../assets/images/nurse.png')}
+    //             style={{ height: 150, width: 150 }}
+    //             resizeMode="contain"
+    //         />
+    //       </View>
+          
+    //       <Text>{'\n'}</Text>
+          
+    //       <Slider
+    //               disabled={true}
+    //               style={{width:250}}
+    //               trackStyle={styles.track}
+    //               thumbStyle={styles.thumb}
+    //               step={1}
+    //               minimumValue={0}
+    //               maximumValue={10}
+    //               value={this.state.value}
+    //               />
+  
+    //       <Text>{'\n'}</Text>
+  
+    //       <Button
+    //           onPress={this.handleSubmit}
+    //           title= 'ตกลง'
+    //           color= '#000'
+    //           fontFamily= 'cloud-bold'
+    //           fontSize = {22}
+    //           buttonStyle={{
+    //               borderRadius: 30,
+    //               backgroundColor: '#A5D6A7',
+    //               width: 130,
+    //               height: 50        
+    //           }}
+    //           />
+    //     </View>
+    //   );
+    // }
+    
   }
 }
 const styles = StyleSheet.create({
@@ -68,7 +173,12 @@ const styles = StyleSheet.create({
   txtStyle:{
     color: '#455A64',
     fontFamily: 'cloud-bold',
-    fontSize: 25
+    fontSize: 25,
+    marginTop: 25,
+  },
+  Mainbody:{
+    flexDirection: 'row',
+    alignContent: 'center'
   },
   track: {
     height: 18,

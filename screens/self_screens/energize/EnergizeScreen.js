@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Alert, Slider, AsyncStorage } from 'react-native';
-import { Button } from 'react-native-elements'
+import { Button } from 'react-native-elements';
 
 class EnergizeScreen extends Component {
 
@@ -51,12 +51,12 @@ class EnergizeScreen extends Component {
 
         <View style={styles.SliderStyle}>
             <Slider
-                style={{width:250}}
+                style={{width:260}}
                 thumbImage={require('../../../assets/images/cardiogram.png')}
                 trackStyle={styles.track}
                 thumbStyle={styles.thumb}
                 step={1}
-                minimumValue={0}
+                minimumValue={1}
                 maximumValue={10}
                 value={this.state.value}
                 onValueChange={val => this.setState({ value: val })}
@@ -106,20 +106,20 @@ const styles = StyleSheet.create({
     },
     TitleBody1: {
         color: '#455A64',
-        marginLeft:65,
+        marginLeft:70,
         fontSize: 20,
         fontFamily: 'cloud-bold'
     },
     TitleBody2: {
         color: '#455A64',
-        marginLeft:97,
+        marginLeft:80,
         textAlign: 'center',
         fontSize: 20,
         fontFamily: 'cloud-bold'
     },
     TitleBody3: {
         color: '#455A64',
-        marginLeft:98,
+        marginLeft:90,
         fontSize: 20,
         fontFamily: 'cloud-bold'
     },

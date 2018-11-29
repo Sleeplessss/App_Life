@@ -21,6 +21,8 @@ import Suicide from '../self_screens/articles/SuicideScreen';
 
 import EnergizeScreen from '../self_screens/energize/EnergizeScreen';
 import EnergizeResul from './energize/ResultScreen';
+import High from '../self_screens/energize/HighScreen';
+import Low from '../self_screens/energize/LowScreen';
 
 import PhoneBook from '../self_screens/people/PhoneBook';
 import AddPhonenumber from '../self_screens/people/AddPhonenumber';
@@ -208,5 +210,7 @@ export default createStackNavigator({
   PhoneBook, 
   AddPhonenumber, 
   ScreeningMain, 
-  StartScreening,  
+  StartScreening, 
+  High,
+  Low
 },{ headerMode : 'none' });
