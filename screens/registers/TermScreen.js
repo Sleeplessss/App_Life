@@ -13,7 +13,7 @@ import SelfFormScreen from '../self_screens/SelfFormScreen';
 import IntimateFormScreen from '../intimate_screens/IntimateFormScreen';
 //import SelfMain from '../self_screens/Main';
 import SelfMain from '../self_screens/SelfNavigator';
-import IntimateMain from '../intimate_screens/Main';
+import IntimateMain from '../intimate_screens/IntimateNavigator';
 
 class TermScreen extends Component {
 

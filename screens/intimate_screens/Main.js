@@ -168,4 +168,15 @@ const styles = StyleSheet.create({
   }
 });
 
-export default createStackNavigator({ Main, Consolation, Relax, ScreeningMain, VideoHome, StartScreening, ComunicationScreen, Suicide, StayAlert },{ headerMode : null });
+export default createStackNavigator({
+   Main, 
+   Consolation, 
+   Relax, 
+   ScreeningMain, 
+   VideoHome, 
+   StartScreening, 
+   ComunicationScreen, 
+   Suicide, 
+   StayAlert },
+  //  { headerMode : null }
+   );

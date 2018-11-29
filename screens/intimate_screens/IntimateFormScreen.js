@@ -11,7 +11,7 @@ import {
     ScrollView,
     ToastAndroid
 } from 'react-native';
-import { Button } from 'react-native-elements';
+import { Button, Header, Icon } from 'react-native-elements';
 import {
     StackActions,
     NavigationActions,
@@ -115,6 +115,19 @@ export default class IntimateFormScreen extends Component {
         return (
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                 <View style={styles.container}>
+                <Header
+                    leftComponent={ <Icon name='arrow-back'  color= '#fff' onPress={()=>this.props.navigation.navigate('UserScreen')} /> }
+                    centerComponent={<View style={{ flex: 1, overflow: 'hidden' }}>
+                        <Image
+                        style={{ flex: 1, height: 30, width: 300, alignSelf: 'center' }}
+                        source={require('../../assets/images/header-life.png')}
+                        resizeMode="contain"
+                        /> 
+                    </View>}
+                    
+                    backgroundColor= '#90CAF9'
+                
+                />
                     <View style={{ flex: 1, justifyContent: 'center' }}>
                         <Text style={styles.SelfText}>
                             {'\n'}
@@ -145,7 +158,8 @@ export default class IntimateFormScreen extends Component {
                             large
                             onPress={this.handleSubmit}
                             title='ตกลง'
-                            fontFamily='cloud-light'
+                            fontSize={22}
+                            fontFamily='cloud-bold'
                             color='#000'
                             buttonStyle={{ backgroundColor: '#A5D6A7', borderRadius: 30, width: 130 }}
                         />
@@ -167,8 +181,8 @@ const styles = StyleSheet.create({
     SelfText: {
         color: '#455A64',
         textAlign: 'center',
-        fontSize: 20,
-        fontFamily: 'cloud-light'
+        fontSize: 30,
+        fontFamily: 'cloud-bold'
     },
     radioBt: {
         flex: 3,
